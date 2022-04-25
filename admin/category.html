@@ -542,19 +542,19 @@
                         </thead>
                         <tbody>
                           <tr ng-repeat="category in categories">
-                            <td>{{category.org_id}}</td>
-                            <td>{{category.name}}</td>
-                            <td>{{category.description}}</td>
+                            <td id="categoryId">{{category.id}}</td>
+                            <td id="categoryName">{{category.name}}</td>
+                            <td id="description">{{category.description}}</td>
                             <td>
                               <button
                                 class="btn btn-warning"
-                                ng-click="categoryedit(org.id)"
+                                ng-click="categoryedit(category.id)"
                               >
                                 edit
                               </button>
                               <button
                                 class="btn btn-danger"
-                                ng-click="categorydelete(org.id)"
+                                ng-click="categorydelete(category.id)"
                               >
                                 del
                               </button>

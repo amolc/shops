@@ -1,10 +1,10 @@
+const item = require("./item");
+const cart = require("./addToCart");
+var express = require("express");
 
-// const app = require("express")
-// const route = app.Router();
+var api = express();
 
-// console.log("connected");
+api.get("/api/item/allItems", item.getAllItems);
+api.post("/api/cart/addToCart", cart.addToCart);
 
-// var shop = require('./item.js');
-// route.get('/api/getAll', shop.getAll);
-
-// module.exports = shop;
+module.exports = api;

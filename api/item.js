@@ -2,7 +2,7 @@ var mysql =require('mysql');
 var db = require('./database');
 
 
-exports.getAll = function (req, res) {
+exports.getAllItems = function (req, res) {
     var sql = "SELECT * FROM orders";
     //console.log(sql);
     db.query(sql, function (err, data) {    

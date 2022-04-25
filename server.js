@@ -5,7 +5,7 @@ var serveStatic = require('serve-static');
 var bodyParser = require("body-parser");
 var multer = require('multer');
 const upload = multer({ dest: 'uploads/' })
-const shop = require(__dirname + "/api/item");
+const api = require(__dirname + "/api/api");
 // handle cors
 app.use(function (req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
@@ -33,7 +33,7 @@ app.use('/fashion', express.static(__dirname + '/fashion'));
 app.use('/stones', express.static(__dirname + '/stones'));
 app.use('/fishyhub', express.static(__dirname + '/fishyhub'));
 app.use('/stockmarketmantra', express.static(__dirname + '/stockmarketmantra'));
-app.use('/shop', shop.getAll);
+app.use('/shop', api);
 
 
 // app.get('/api/getvessellistById',vessels.getvessellistsById);  
