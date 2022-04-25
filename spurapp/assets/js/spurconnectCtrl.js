@@ -52,6 +52,7 @@ app.controller('spurconnectCtrl', function($scope, $http, $window, $location, $s
 
 
     $scope.login = function(req, res) {
+        alert("login");
         $scope.formvalidate = "true";
         console.log($scope.data);
         $http.post(baseurl + 'spurusers/login', $scope.data).success(function(res) {
