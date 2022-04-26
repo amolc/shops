@@ -62,6 +62,8 @@ FACEBOOK: https://www.facebook.com/themefisher
     ng-app="adminpanel"
     ng-controller="mangoCtrl"
     ng-init="listmango()"
+    ng-init="listcart()"
+
   >
     <!-- Start Top Header Bar -->
     <section class="top-header">
@@ -285,10 +287,11 @@ FACEBOOK: https://www.facebook.com/themefisher
                     <div class="col-md-4 col-sm-6 col-xs-12">
                       <div class="product-short-details">
                         <h2 class="product-title">GM Pendant, Basalt Grey</h2>
-                        <p class="product-price">${{mango.item_price}}</p>
-                        <p class="product-short-description">
+                        <p class="product-price" id="product-price"></p>
+                        <p class="product-short-description" id="product_description">
+
                         </p>
-                        <a href="cart.html" class="btn btn-main">Add To Cart</a>
+                        <button class="btn btn-main" ng-click="addtoCart()">Add To Cart</button>
                         <a
                           href="product-single.html"
                           class="btn btn-transparent"
@@ -384,5 +387,6 @@ Start Call To Action
 
     <!-- Main Js File -->
     <script src="js/script.js"></script>
+    
   </body>
 </html>

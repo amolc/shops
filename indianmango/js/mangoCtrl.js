@@ -1,4 +1,3 @@
-//
 app.controller(
   "mangoCtrl",
   function ($scope, $http, $window, $location, $sce, $timeout, store) {
@@ -8,7 +7,7 @@ app.controller(
       $http
         .get(baseurl + "api/item/allItems")
         .success(function (res) {
-          console.log(res[0].item_picture.data[0]);
+          // console.log(res[0].item_picture.data[0]);
           if (res.status == "false") {
           } else {
             $scope.mangoes = res;
@@ -19,18 +18,50 @@ app.controller(
     };
 
     $scope.mangoFind = function (id) {
-      console.log(id);
-      console.log($scope.mangoes[2]);
+      var org_0id = id;
+      localStorage.setItem("org_id", JSON.stringify(org_0id));
       $scope.mangoes.map((eachObj, index) => {
-        // console.log(eachObj);
         if (eachObj.org_id == id) {
-          console.log(id);
-          console.log(eachObj.org_id);
-          console.log(eachObj);
+          // console.log(eachObj.item_price);
+          var data = eachObj;
+          // console.log(data.item_price);
+          let product_price = document.getElementById("product-price");
+          // console.log(product_price);
+          let product_description = document.getElementById(
+            "product_description"
+          );
+
+          product_price.innerHTML = data.item_price;
+          product_description.innerHTML = data.item_description;
         }
       });
 
       // item_description[id];
+    };
+
+    $scope.addtoCart = function () {
+      // console.log(org_id);
+      
+      // console.log(id);
+      
+      let id = JSON.parse(localStorage.getItem("org_id"));
+      console.log(id);
+      $http
+        .post(baseurl + "api/cart/addToCart", JSON.stringify({ productID: id }))
+        .success(function (res) {
+          if (res.status == "false") {
+            // console.log(1346);
+          } else {
+            id = res.cartID;
+            console.log(res);
+            localStorage.setItem("cartId",JSON.stringify(id))
+            // console.log($scope.cart);
+            
+            // console.log(789789);
+            alert(res.msg);
+          }
+        })
+        .error(function () {});
     };
   }
 );

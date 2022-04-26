@@ -6,6 +6,7 @@ var bodyParser = require("body-parser");
 var multer = require('multer');
 const upload = multer({ dest: 'uploads/' })
 const api = require(__dirname + "/api/api");
+
 // handle cors
 app.use(function (req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
@@ -34,9 +35,7 @@ app.use('/stones', express.static(__dirname + '/stones'));
 app.use('/fishyhub', express.static(__dirname + '/fishyhub'));
 app.use('/stockmarketmantra', express.static(__dirname + '/stockmarketmantra'));
 app.use('/shop', api);
-
-
 // app.get('/api/getvessellistById',vessels.getvessellistsById);  
 global.appRoot = path.resolve(__dirname);
-app.listen(9000);
+app.listen(9005);
 console.log('server is started at port: 9000');
