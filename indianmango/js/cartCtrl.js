@@ -2,15 +2,21 @@ app.controller(
   "cartCtrl",
   function ($scope, $http, $window, $location, $sce, $timeout, store) {
     var baseurl = "http://localhost:9000/shop/";
-// console.log(12165);
+    console.log(123465);
+    let id = JSON.parse(localStorage.getItem("cartId")) ;
+    console.log(id);
+    console.log(12165);
     $scope.listcart = function (req, res) {
       $http
-        .post(baseurl + "api/cart/addToCart")
+        .get(baseurl + `api/getcart/allCarts/${id}`)
         .success(function (res) {
           if (res.status == "false") {
           } else {
-            $scope.cart = res;
-            console.log($scope.cart);
+            $scope.carts = res.cartData;
+            console.log(res.cartData)
+
+
+            // itemName.innerHTML = $scope.cart.cartData[0][0].item_name;
           }
         })
         .error(function () {});

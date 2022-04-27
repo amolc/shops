@@ -461,10 +461,11 @@ FACEBOOK: https://www.facebook.com/themefisher
                           <th class="">Item Name</th>
                           <th class="">Item Price</th>
                           <th class="">Actions</th>
-                        </tr>
-                      </thead>
+                        </thead>
+                      </tr>
                       <tbody>
-                        <tr class="">
+                        <tr class="" ng-repeat="cart in carts">
+                          
                           <td class="">
                             <div class="product-info">
                               <img
@@ -472,15 +473,15 @@ FACEBOOK: https://www.facebook.com/themefisher
                                 src="images/shop/cart/cart-1.jpg"
                                 alt=""
                               />
-                              <a href="#!">Sunglass</a>
+                              <a hrefc="#!" id="itemName">{{cart.item_name}}</a>
                             </div>
                           </td>
-                          <td class="">$200.00</td>
+                          <td class="" id="itemPrice">${{cart.item_price}}</td>
                           <td class="">
                             <a class="product-remove" href="#!">Remove</a>
                           </td>
                         </tr>
-                        <tr class="">
+                        <!-- <tr class="">
                           <td class="">
                             <div class="product-info">
                               <img
@@ -511,7 +512,7 @@ FACEBOOK: https://www.facebook.com/themefisher
                           <td class="">
                             <a class="product-remove" href="#!">Remove</a>
                           </td>
-                        </tr>
+                        </tr> -->
                       </tbody>
                     </table>
                     <a href="checkout.html" class="btn btn-main pull-right"

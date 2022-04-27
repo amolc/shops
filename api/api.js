@@ -1,5 +1,6 @@
 const item = require("./item");
 const cart = require("./addToCart");
+const bill = require("./payBill");
 const getCarts = require("./Carts")
 var express = require("express");
 
@@ -7,7 +8,8 @@ var api = express();
 
 api.get("/api/item/allItems", item.getAllItems);
 api.post("/api/cart/addToCart", cart.addToCart);
-api.get("/api/getcart/allCarts/:id", getCarts.getAllCarts);
+api.post("/api/bill/payBill", bill.addBilling);
+api.get("/api/getcart/allCarts/:id", getCarts.findCarts);
 
 
 module.exports = api;

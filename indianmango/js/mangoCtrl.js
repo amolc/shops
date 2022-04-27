@@ -41,9 +41,9 @@ app.controller(
 
     $scope.addtoCart = function () {
       // console.log(org_id);
-      
+
       // console.log(id);
-      
+
       let id = JSON.parse(localStorage.getItem("org_id"));
       console.log(id);
       $http
@@ -53,15 +53,23 @@ app.controller(
             // console.log(1346);
           } else {
             id = res.cartID;
+
             console.log(res);
-            localStorage.setItem("cartId",JSON.stringify(id))
-            // console.log($scope.cart);
-            
+            localStorage.setItem("cartId", JSON.stringify(id));
+            console.log($scope.cart);
+
             // console.log(789789);
             alert(res.msg);
           }
         })
         .error(function () {});
     };
+
+    $scope.cart = function () {
+      window.location.assign("./cart.html");
+  
+    };
+
+    console.log(1231465);
   }
 );
