@@ -2,6 +2,8 @@ var mysql =require('mysql');
 var db = require('./database');
 const helper  =require("./helper")
 exports.findCarts = async (req,res)=>{
+    
+
   try {
     const { id } = req.params;
     if (!id) {
@@ -48,39 +50,3 @@ exports.findCarts = async (req,res)=>{
   }
     };
 
-exports.removeProduct = async (req,res)=>{
- try {
-   let {cartID,productID} = req.body;
-   if (!cartID || !productID) {
-     return res.status(422).json({
-       message: "Empty Filed found",
-       error: error.message,
-       success: false,
-     });
-   } else {
-      let sql = `DELETE FROM Cart WHERE cartID = ? AND productID = ?`;
-      const delete_query = mysql.format(sql, [cartID,productID]);
-      let delete_cart = await helper.delete(delete_query);
-      if (delete_cart.affectedRows === 0) {
-        return res.status(200).json({
-          message: "Cart not Exist",
-          success: true,
-        });
-      } else {
-        return res.json({
-          message: `Product delete successfully in your Cart  `,
-          success: true,
-          cardID : cartID,
-          productID: productID
-        });
-      }
-   }
- } catch (error) {
-   console.log("error",error);
-   return res.status(500).json({
-      message: "Something went Wrong 🤦‍♂️ ",
-      error: error.message,
-      success: false,
-   })
- }
-}
