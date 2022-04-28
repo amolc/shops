@@ -25,7 +25,14 @@ const helper = {
       });
     });
   },
-  
+  delete: (delete_query) => {
+    return new Promise((resolve, reject) => {
+      connection.query(delete_query, async (err, result) => {
+        if (err) reject(err);
+        resolve(result);
+      });
+    });
+  },
 };
 
 module.exports = helper;
