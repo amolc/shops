@@ -10,14 +10,32 @@ app.controller(
           // console.log(res[0].item_picture.data[0]);
           if (res.status == "false") {
           } else {
-            $scope.mangoes = res;
-            console.log($scope.mangoes);
+            console.log(res);
+            if (res.length) {
+              let temp = [];
+              res.forEach((e) => {
+                if (e) {
+                  var imageUrl =
+                    "https://www.mango.org/wp-content/uploads/2017/11/tommy-variety.jpg";
+                  if (e.item_picture) {
+                    var arrayBufferView = new Uint8Array(e.item_picture.data);
+                    var blob = new Blob([arrayBufferView], {
+                      type: "image/jpeg",
+                    });
+                    var urlCreator = window.URL || window.webkitURL;
+                    imageUrl = urlCreator.createObjectURL(blob);
+                  }
+                  temp.push({ ...e, item_picture: imageUrl });
+                }
+              });
+              $scope.mangoes = temp;
+            }
           }
         })
         .error(function () {});
     };
 
-    $scope.mangoFind = function (id) {
+    $scope.mangoFind = function (id, mango) {
       var org_0id = id;
       localStorage.setItem("org_id", JSON.stringify(org_0id));
       $scope.mangoes.map((eachObj, index) => {
@@ -30,53 +48,53 @@ app.controller(
           let product_description = document.getElementById(
             "product_description"
           );
-
-          product_price.innerHTML = data.item_price;
+          console.log(mango);
+          $scope.selected = mango;
+          product_price.innerText = data.item_price;
           product_description.innerHTML = data.item_description;
-          console.log(121453);
         }
       });
-
-      // item_description[id];
     };
+    $scope.handleCart = function (event) {
+      console.log(event);
+    };
+    $scope.addtoCart = function () {
+      let id = JSON.parse(localStorage.getItem("org_id"));
+      console.log(localStorage.getItem("cid"));
 
-    // $scope.addtoCart = function () {
-    //   // console.log(org_id);
+      localStorage.setItem("toShowId", JSON.stringify(id));
+      $http
+        .post(
+          baseurl + "api/cart/addToCart",
+          JSON.stringify({ productID: id, cartID: localStorage.getItem("cid") })
+        )
+        .success(function (res) {
+          if (res.status == "false") {
+            // console.log(1346);
+          } else {
+            id = [res.cartID];
+            localStorage.setItem("cid", res.cartID);
 
-    //   // console.log(id);
+            console.log(res);
+            console.log(id);
+            window.location.assign("./cart.html")
 
-    //   let id = JSON.parse(localStorage.getItem("org_id"));
-    //   console.log(id);
-    //   $http
-    //     .post(baseurl + "api/cart/addToCart", JSON.stringify({ productID: id }))
-    //     .success(function (res) {
-    //       if (res.status == "false") {
-    //         // console.log(1346);
-    //       } else {
-    //         id = res.cartID;
 
-    //         console.log(res);
-    //         localStorage.setItem("cartId", JSON.stringify(id));
-    //         console.log($scope.cart);
-
-    //         // console.log(789789);
-    //         alert(res.msg);
-    //       }
-    //     })
-    //     .error(function () {});
-    // };
+          }
+        })
+        .error(function () {});
+    };
 
     $scope.cart = function () {
       window.location.assign("./cart.html");
     };
 
     $scope.saveDataToShowDetails = function (id) {
-      let org_0id = id;
-      localStorage.setItem("org_id", JSON.stringify(org_0id))
-
       const data = $scope.mangoes[id - 1];
+
+      localStorage.setItem("descriptionDetails", JSON.stringify(data));
+
       console.log(data);
-      localStorage.setItem("itemDetails", JSON.stringify(data));
     };
   }
 );

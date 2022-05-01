@@ -3,6 +3,13 @@ app.controller(
   function ($scope, $http, $window, $location, $sce, $timeout, store) {
     var baseurl = "https://api.superadmin.shop/api/";
 
+$scope.listPage = function(){
+  window.location.assign("list.html")
+  // console.log(123456);
+}
+
+
+
     $(document).ready(function () {
       if (window.location.pathname === "/admin/org-add.html") {
         let s = new URL(window.location.href);

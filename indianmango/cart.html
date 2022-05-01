@@ -460,25 +460,29 @@ FACEBOOK: https://www.facebook.com/themefisher
                         <tr>
                           <th class="">Item Name</th>
                           <th class="">Item Price</th>
-                          <th class="">Actions</th>
+                          <th class="">Item quantity</th>
+                          <th class="">Subtotal </th>
+                          <th class="">Actions</th>`
                         </thead>
                       </tr>
                       <tbody>
-                        <tr class="" ng-repeat="cart in carts">
+                        <tr class=""  ng-repeat="cart in carts">`
                           
                           <td class="">
-                            <div class="product-info">
+                            <div class="product-info" >
                               <img
                                 width="80"
-                                src="images/shop/cart/cart-1.jpg"
+                                src="{{image}}"
                                 alt=""
                               />
                               <a hrefc="#!" id="itemName">{{cart.item_name}}</a>
                             </div>
                           </td>
-                          <td class="" id="itemPrice">${{cart.item_price}}</td>
+                          <td class="" id="itemPrice">{{cart.item_price}}</td>
+                          <td class="" id="itemQuantity">{{cart.quantity}}</td>
+                          <td class="" >{{cart.quantity *cart.item_price}}</td>
                           <td class="">
-                            <a class="product-remove" href="javascript:void(0)" ng-click="cartDelete(cart.org_id)">Remove</a>
+                            <a class="product-remove" href="javascript:void(0)" ng-click="cartDelete(cart.cartID)">Remove</a>
                           </td>
                         </tr>
                         <!-- <tr class="">

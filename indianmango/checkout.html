@@ -570,11 +570,11 @@ FACEBOOK: https://www.facebook.com/themefisher
                     </a>
                     <div class="media-body">
                       <h4 class="media-heading">
-                        <a href="product-single.html"
-                          >Ambassador Heritage 1921</a
+                        <a href="product-single.html" id="itemName"
+                          ></a
                         >
                       </h4>
-                      <p class="price">1 x $249</p>
+                      <p class="price" id="itemPrice">{{totalPrice}}</p>
                       <span class="remove">Remove</span>
                     </div>
                   </div>
@@ -591,8 +591,12 @@ FACEBOOK: https://www.facebook.com/themefisher
                   </div>
                   <ul class="summary-prices">
                     <li>
+                      <span>Quantity:</span>
+                      <span class="price" id="itemQuantity">{{quantity}}</span>
+                    </li>
+                    <li>
                       <span>Subtotal:</span>
-                      <span class="price">$190</span>
+                      <span class="price" id="subTotal">{{totalPrice}}</span>
                     </li>
                     <li>
                       <span>Shipping:</span>
@@ -601,7 +605,7 @@ FACEBOOK: https://www.facebook.com/themefisher
                   </ul>
                   <div class="summary-total">
                     <span>Total</span>
-                    <span>$250</span>
+                    <span id="totalPrice">{{totalPrice}}</span>
                   </div>
                   <div class="verified-icon">
                     <img src="images/shop/verified.png" />

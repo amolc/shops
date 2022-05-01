@@ -10,7 +10,8 @@ api.get("/api/item/allItems", item.getAllItems);
 api.post("/api/cart/addToCart", cart.addToCart);
 api.post("/api/bill/payBill", bill.addBilling);
 api.get("/api/getcart/allCarts/:id", getCarts.findCarts);
-api.delete("/api/remove/removeProduct",getCarts.removeProduct);
+api.post("/api/additem",item.addItems);
+api.post("/api/remove/removeProduct",getCarts.removeProduct);
 
 
 module.exports = api;

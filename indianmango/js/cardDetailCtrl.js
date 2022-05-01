@@ -3,38 +3,45 @@ app.controller(
   function ($scope, $http, $window, $location, $sce, $timeout, store) {
     var baseurl = "http://localhost:9000/shop/";
 
+    let itemTitle = document.getElementById("itemTitle");
+    let itemPrice = document.getElementById("itemPrice");
+    let itemDescription = document.getElementById("itemDescription");
     $scope.listcardDetail = function (req, res) {
-      const data = JSON.parse(localStorage.getItem("itemDetails"));
+      const data = JSON.parse(localStorage.getItem("descriptionDetails"));
       console.log(data);
-      let itemTitle = document.getElementById("itemTitle");
-      let itemPrice = document.getElementById("itemPrice");
-      let itemDescription = document.getElementById("itemDescription");
-      let productQuantity = document.getElementById("product-quantity");
-
-      itemTitle.innerHTML = data.item_title;
+      $scope.image = data.item_image;
+      itemTitle.innerHTML = data.item_name;
       itemDescription.innerHTML = data.item_description;
-      itemPrice.innerHTML = data.item_price;
-      productQuantity.value = data.item_quantity;
+      itemPrice.innerHTML = `$${data.item_price}`;
+
       //   console.log(124475);
     };
+
     $scope.addtoCart = function () {
       let id = JSON.parse(localStorage.getItem("org_id"));
-      console.log(id);
+      console.log(localStorage.getItem("cid"));
+
+      localStorage.setItem("toShowId", JSON.stringify(id));
       $http
-        .post(baseurl + "api/cart/addToCart", JSON.stringify({ productID: id }))
+        .post(
+          baseurl + "api/cart/addToCart",
+          JSON.stringify({
+            productID: id,
+            cartID: localStorage.getItem("cid"),
+            quantity: $scope.quantity,
+          })
+        )
         .success(function (res) {
-            console.log(res);
           if (res.status == "false") {
             // console.log(1346);
           } else {
-            id = res.cartID;
+            id = [res.cartID];
+            localStorage.setItem("cid", id);
 
             console.log(res);
-            localStorage.setItem("cartId", JSON.stringify(id));
-            // console.log($scope.listcardDetail);
-
-            // console.log(789789);
-            window.location.assign("cart.html");
+            console.log(id);
+            // alert(res.msg);
+            window.location.assign("./cart.html");
           }
         })
         .error(function () {});

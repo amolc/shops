@@ -231,16 +231,20 @@
     <!-- /# sidebar -->
 
     <div class="container text-center">
-      <h1 class="text-center">Item List</h1>
+      <h1 class="text-center">Item List
+      <button class="btn btn-danger text-right" ng-click="listAdd()">Add</button>
+      </h1>
       <ul class="itemList container">
         <li><strong> Product </strong></li>
         <li><strong>Quantity</strong></li>
         <li><strong>Price</strong></li>
       </ul>
-      <ul class="itemList container">
-        <li>{{list.item_name}}</li>
-        <li>{{list.item_quantity}}</li>
-        <li>{{list.item_price}}$</li>
+
+      <ul class="itemList container" ng-repeat="mango in mangoes">
+        <li>{{mango.item_name}}</li>
+        <li>{{mango.item_quantity}}</li>
+        <li>{{mango.item_price}}$</li>
+        
       </ul>
     </div>
   </body>
@@ -257,6 +261,11 @@
 
   <script src="assets/js/lib/bootstrap.min.js"></script>
   <script src="assets/js/scripts.js"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js">
+  </script>
+  <script src=
+"https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js">
+  </script>
   <!-- scripit init-->
   <script src="assets/js/lib/data-table/datatables.min.js"></script>
   <script src="assets/js/lib/data-table/dataTables.buttons.min.js"></script>

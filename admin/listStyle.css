@@ -7,7 +7,10 @@
   padding: 10px;
   margin-top: 20px;
 }
-
+.mybtn {
+  text-align: right;
+  /* //margin-right: auto; */
+}
 .itemList li {
   width: 100%;
 }
