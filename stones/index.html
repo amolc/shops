@@ -24,24 +24,14 @@
     <link rel="stylesheet" href="assets/css/slick.css">
     <link rel="stylesheet" href="assets/css/nice-select.css">
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/scss/cart.scss">
     
 </head>
 <body class="full-wrapper">
-    <!-- ? Preloader Start -->
-    <div id="preloader-active">
-        <div class="preloader d-flex align-items-center justify-content-center">
-            <div class="preloader-inner position-relative">
-                <div class="preloader-circle"></div>
-                <div class="preloader-img pere-text">
-                    <img src="assets/img/logo/apple-icon.png" alt="">
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Preloader Start-->
+    
     <header>
         <!-- Header Start -->
-        <div class="header-area ">
+        <div class="header-area">
             <div class="main-header header-sticky">
                 <div class="container-fluid">
                     <div class="menu-wrapper d-flex align-items-center justify-content-between">
@@ -87,7 +77,7 @@
                                     </li>
                                     <li>
                                         <div class="card-stor">
-                                            <img src="assets/img/gallery/card.svg" alt="">
+                                            <a href="cart.html"><img src="assets/img/gallery/card.svg" alt=""></a> 
                                             <span>0</span>
                                         </div>
                                     </li>
@@ -139,10 +129,10 @@
 
         <!--? Popular Items Start -->
         <div class="popular-items pt-50">
-            <div class="container-fluid">
+            <div class="container">
                 <div class="row">
                     <div class="col-lg-3 col-md-6 col-sm-6">
-                        <div class="single-popular-items mb-50 text-center" data-wow-duration="1s" data-wow-delay=".1s">
+                        <div class="single-popular-items mb-50 text-center wow fadeInUp" data-wow-duration="1s" data-wow-delay=".2s">
                             <div class="popular-img">
                                 <img src="assets/img/gallery/popular1.png" alt="">
                                 <div class="img-cap">
@@ -192,10 +182,11 @@
         <div class="row justify-content-center">
             <div class="col-xl-7 col-lg-8 col-md-10">
                 <div class="section-tittle mb-60 text-center wow fadeInUp" data-wow-duration="2s" data-wow-delay=".2s">
-                    <h2>our<br>products</h2>
+                    <h2>our products</h2>
                 </div>
             </div>
         </div>
+        
         <div class="row">
             <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
                 <div class="single-new-arrival mb-50 text-center wow fadeInUp" data-wow-duration="1s" data-wow-delay=".1s">
@@ -295,7 +286,7 @@
             </div>
         </div>
         <div class="popular-caption">
-         <h3><a href="product_details.html">Amethyst – Point XS</a></h3>
+         <h3><a href="product_details.html">Tiger eye</a></h3>
          <div class="rating mb-10">
             <i class="fas fa-star"></i>
             <i class="fas fa-star"></i>
@@ -303,7 +294,7 @@
             <i class="fas fa-star"></i>
             <i class="fas fa-star"></i>
         </div>
-        <span>Rs. 164.00</span>
+        <span>Rs. 450.00</span>
     </div>
 </div>
 </div>
@@ -399,36 +390,113 @@
 </div>
 </section>
 <!-- End collection -->
-<!--? Popular Locations Start 01-->
-<div class="popular-product pt-50">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-lg-6 col-md-6 col-sm-12">
-                <div class="single-product mb-50">
-                    <div class="location-img">
-                        <img src="assets/img/gallery/popular-imtes1.png" alt="">
-                    </div>
-                    <div class="location-details">
-                        <p><a href="product_details.html">ROSE QUARTZ HEXAGOANAL PENDANT <br> – #GA193</a></p>
-                        <a href="product_details.html" class="btn">Rs.250.00</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-6 col-md-6 col-sm-12">
-                <div class="single-product mb-50">
-                    <div class="location-img">
-                        <img src="assets/img/gallery/popular-imtes2.png" alt="">
-                    </div>
-                    <div class="location-details">
-                        <p><a href="product_details.html">CRYSTAL QUARTZ SHREE YANTRA PENDANT CARVED <br> – #GA194</a></p>
-                        <a href="product_details.html" class="btn">Rs.500.00</a>
-                    </div>
-                </div>
+
+
+<!-- Feature Products section -->
+<section>
+    <div class="row justify-content-center">
+        <div class="col-xl-7 col-lg-8 col-md-10">
+            <div class="section-tittle mb-60 text-center wow fadeInUp" data-wow-duration="2s" data-wow-delay=".2s">
+            <h2>Feature products</h2>
             </div>
         </div>
     </div>
+</section>
+<!-- Feature Products section -->
+<div class="new-arrival">
+    <div class="container">
+<div class="row">
+    <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
+        <div class="single-new-arrival mb-50 text-center wow fadeInUp" data-wow-duration="1s" data-wow-delay=".5s">
+            <div class="popular-img">
+                <img src="assets/img/gallery/arrival5.png" alt="">
+                <div class="favorit-items">
+                    <!-- <span class="flaticon-heart"></span> -->
+                    <img src="assets/img/gallery/favorit-card.png" alt="">
+                </div>
+            </div>
+            <div class="popular-caption">
+             <h3><a href="product_details.html">Tiger eye</a></h3>
+             <div class="rating mb-10">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+            <span>Rs. 450.00</span>
+        </div>
+    </div>
+    </div>
+<div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
+<div class="single-new-arrival mb-50 text-center wow fadeInUp" data-wow-duration="1s" data-wow-delay=".6s">
+<div class="popular-img">
+    <img src="assets/img/gallery/arrival6.png" alt="">
+    <div class="favorit-items">
+        <!-- <span class="flaticon-heart"></span> -->
+        <img src="assets/img/gallery/favorit-card.png" alt="">
+    </div>
 </div>
-<!-- Popular Locations End -->
+<div class="popular-caption">
+ <h3><a href="product_details.html">Aventurine earrings</a></h3>
+ <div class="rating mb-10">
+    <i class="fas fa-star"></i>
+    <i class="fas fa-star"></i>
+    <i class="fas fa-star"></i>
+    <i class="fas fa-star"></i>
+    <i class="fas fa-star"></i>
+</div>
+<span>Rs. 1062.00</span>
+</div>
+</div>
+</div>
+<div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
+<div class="single-new-arrival mb-50 text-center wow fadeInUp" data-wow-duration="1s" data-wow-delay=".7s">
+<div class="popular-img">
+    <img src="assets/img/gallery/arrival7.png" alt="">
+    <div class="favorit-items">
+        <!-- <span class="flaticon-heart"></span> -->
+        <img src="assets/img/gallery/favorit-card.png" alt="">
+    </div>
+</div>
+<div class="popular-caption">
+ <h3><a href="product_details.html">Red jasper M</a></h3>
+ <div class="rating mb-10">
+    <i class="fas fa-star"></i>
+    <i class="fas fa-star"></i>
+    <i class="fas fa-star"></i>
+    <i class="fas fa-star"></i>
+    <i class="fas fa-star"></i>
+</div>
+<span>Rs. 328.00</span>
+</div>
+</div>
+</div>
+<div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
+<div class="single-new-arrival mb-50 text-center wow fadeInUp" data-wow-duration="1s" data-wow-delay=".8s">
+<div class="popular-img">
+    <img src="assets/img/gallery/arrival8.png" alt="">
+    <div class="favorit-items">
+        <!-- <span class="flaticon-heart"></span> -->
+        <img src="assets/img/gallery/favorit-card.png" alt="">
+    </div>
+</div>
+<div class="popular-caption">
+ <h3><a href="product_details.html">Obsidian pendant – Arrow</a></h3>
+ <div class="rating mb-10">
+    <i class="fas fa-star"></i>
+    <i class="fas fa-star"></i>
+    <i class="fas fa-star"></i>
+    <i class="fas fa-star"></i>
+    <i class="fas fa-star"></i>
+</div>
+<span>Rs. 905.00</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
 
 </main>
 <footer>

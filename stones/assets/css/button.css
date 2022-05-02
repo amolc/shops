@@ -1,0 +1,7 @@
+.input button{
+	outline: 0;
+	padding: 0 15px;
+	height: 15px;
+	line-height: 45px;
+    background-color: #red;
+}
