@@ -6,6 +6,7 @@ var bodyParser = require("body-parser");
 var multer = require('multer');
 const upload = multer({ dest: 'uploads/' })
 
+
 // handle cors
 app.use(function(req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
@@ -21,7 +22,7 @@ app.use(bodyParser.urlencoded({ limit: "50mb", extended: true, type: "applicatio
 app.use(bodyParser.json({ type: "application/json" }));
 app.use(bodyParser.raw({ limit: "50mb" }));
 
-
+app.use('/angular', express.static(__dirname + '/angular'));
 app.use('/expresslaptop', express.static(__dirname + '/expresslaptop'));
 app.use('/indianmango', express.static(__dirname + '/indianmango'));
 app.use('/naturemango', express.static(__dirname + '/naturemango'));
@@ -36,10 +37,21 @@ app.use('/stockmarketmantra', express.static(__dirname + '/stockmarketmantra'));
 app.use('/mango', express.static(__dirname + '/mango'));
 app.use('/second_income', express.static(__dirname + '/second_income'));
 app.use('/superadmin', express.static(__dirname + '/superadmin'));
+app.use('/scripts', express.static(__dirname + '/scripts'));
 
 
 
-// app.get('/api/getvessellistById',vessels.getvessellistsById);  
+/* Sequelize */
+
+const db = require("./app/models");
+db.sequelize.sync();
+
+
+
+// console.log(msg);
+
+require("./app/routes/tutorial.routes")(app);
+
 global.appRoot = path.resolve(__dirname);
-app.listen(9000);
-console.log('server is started at port: 9000');
+app.listen(19000);
+console.log('server is started at port: 19000');

@@ -6,4 +6,8 @@ var connection = mysql.createPool({
     password: '10gXWOqeaf!',
     host: 'superadmin.shop',
 });
+
+
+
 module.exports = connection;
+module.exports = dbConfig;
