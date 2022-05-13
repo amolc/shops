@@ -46,6 +46,28 @@ def spurapp(filename):
         print("no filename")
     return send_from_directory(app.root_path + '/spurapp/', filename)
 
+@app.route('/angular/<path:filename>')
+def angular(filename):
+    print(filename)
+    if(filename==""):
+        print("no filename")
+    return send_from_directory(app.root_path + '/angular/', filename)
+
+@app.route('/second_income/<path:filename>')
+def second_income(filename):
+    print(filename)
+    if(filename==""):
+        print("no filename")
+    return send_from_directory(app.root_path + '/second_income/', filename)
+
+@app.route('/superadmin/<path:filename>')
+def superadmin(filename):
+    print(filename)
+    if(filename==""):
+        print("no filename")
+    return send_from_directory(app.root_path + '/superadmin/', filename)
+
+
 @app.route('/<path:filename>')
 def jwt(filename):
     print(filename)
