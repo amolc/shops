@@ -1,5 +1,5 @@
 module.exports = (sequelize, Sequelize) => {
-    const Organization = sequelize.define("organization", {
+    const Category = sequelize.define("category", {
         title: {
             type: Sequelize.STRING
         },
@@ -10,5 +10,5 @@ module.exports = (sequelize, Sequelize) => {
             type: Sequelize.BOOLEAN
         }
     });
-    return Organization;
+    return Category;
 };

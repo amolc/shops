@@ -21,10 +21,25 @@
     <link href="./dist/css/tabler-vendors.min.css" rel="stylesheet" />
     <link href="./dist/css/demo.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://unpkg.com/@tabler/icons@latest/iconfont/tabler-icons.min.css">
+
+    <!-- 1. Add the following script to your page. -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.js"></script>
+    <script src="/angular/angular-storage.min.js"></script>
+    <script src="/angular/angular-payments.js"></script>
+    <script src="/angular/app.js"></script>
+    <script src="/angular/userCtrl.js"></script>
+    <script src="/angular/categoryCtrl.js"></script>
+    <script src="/angular/supercategoryCtrl.js"></script>
+    <script src="/angular/organizationCtrl.js"></script>
+
+    <!-- 1. Add the following script to your page. -->
+
+
 </head>
 
-<body class="theme-dark">
-    <header class="navbar navbar-expand-md navbar-light d-print-none">
+<body class="theme-dark" ng-app="adminpanel" ng-controller="supercategoryCtrl" ng-init="init()">
+
+   <header class="navbar navbar-expand-md navbar-light d-print-none">
         <div class="container-xl">
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-menu">
         <span class="navbar-toggler-icon"></span>

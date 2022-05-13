@@ -20,6 +20,11 @@ app.controller(
       alert("I am alert");
     };
 
+    $scope.init = function(req, res) {
+
+      alert("category");
+  }
+
     $scope.listcategories = function (req, res) {
       $http
         .get(baseurl + "category/")

@@ -1,8 +1,8 @@
 const db = require("../models");
-const Tutorial = db.organizations;
+const Tutorial = db.category;
 const Op = db.Sequelize.Op;
 
-// Create and Save a new Organization
+// Create and Save a new Category
 exports.create = (req, res) => {
     // Validate request
     if (!req.body.title) {
@@ -12,138 +12,138 @@ exports.create = (req, res) => {
         return;
     }
 
-    // Create a Organization
-    const organizations = {
+    // Create a Category
+    const category = {
         title: req.body.title,
         description: req.body.description,
         published: req.body.published ? req.body.published : false
     };
 
-    // Save Organization in the database
-    Organization.create(organizations)
+    // Save Category in the database
+    Category.create(category)
         .then(data => {
             res.send(data);
         })
         .catch(err => {
             res.status(500).send({
-                message: err.message || "Some error occurred while creating the Organization."
+                message: err.message || "Some error occurred while creating the Tutorial."
             });
         });
 };
 
-// Retrieve all Organizations from the database.
+// Retrieve all Category from the database.
 exports.findAll = (req, res) => {
     const title = req.query.title;
     var condition = title ? { title: {
             [Op.like]: `%${title}%` } } : null;
 
-    Organization.findAll({ where: condition })
+    Tutorial.findAll({ where: condition })
         .then(data => {
             res.send(data);
         })
         .catch(err => {
             res.status(500).send({
-                message: err.message || "Some error occurred while retrieving organizations."
+                message: err.message || "Some error occurred while retrieving category."
             });
         });
 };
 
-// Find a single Organization with an id
+// Find a single Tutorial with an id
 exports.findOne = (req, res) => {
     const id = req.params.id;
 
-    Organization.findByPk(id)
+    Tutorial.findByPk(id)
         .then(data => {
             if (data) {
                 res.send(data);
             } else {
                 res.status(404).send({
-                    message: `Cannot find Organization with id=${id}.`
+                    message: `Cannot find Tutorial with id=${id}.`
                 });
             }
         })
         .catch(err => {
             res.status(500).send({
-                message: "Error retrieving Organization with id=" + id
+                message: "Error retrieving Tutorial with id=" + id
             });
         });
 };
 
-// Update a Organization by the id in the request
+// Update a Tutorial by the id in the request
 exports.update = (req, res) => {
     const id = req.params.id;
 
-    Organization.update(req.body, {
+    Tutorial.update(req.body, {
             where: { id: id }
         })
         .then(num => {
             if (num == 1) {
                 res.send({
-                    message: "Organization was updated successfully."
+                    message: "Tutorial was updated successfully."
                 });
             } else {
                 res.send({
-                    message: `Cannot update Organization with id=${id}. Maybe Organization was not found or req.body is empty!`
+                    message: `Cannot update Tutorial with id=${id}. Maybe Tutorial was not found or req.body is empty!`
                 });
             }
         })
         .catch(err => {
             res.status(500).send({
-                message: "Error updating Organization with id=" + id
+                message: "Error updating Tutorial with id=" + id
             });
         });
 };
 
-// Delete a Organization with the specified id in the request
+// Delete a Tutorial with the specified id in the request
 exports.delete = (req, res) => {
     const id = req.params.id;
 
-    Organization.destroy({
+    Tutorial.destroy({
             where: { id: id }
         })
         .then(num => {
             if (num == 1) {
                 res.send({
-                    message: "Organization was deleted successfully!"
+                    message: "Tutorial was deleted successfully!"
                 });
             } else {
                 res.send({
-                    message: `Cannot delete Organization with id=${id}. Maybe Organization was not found!`
+                    message: `Cannot delete Tutorial with id=${id}. Maybe Tutorial was not found!`
                 });
             }
         })
         .catch(err => {
             res.status(500).send({
-                message: "Could not delete Organization with id=" + id
+                message: "Could not delete Tutorial with id=" + id
             });
         });
 };
 
-// Delete all Organizations from the database.
+// Delete all Tutorials from the database.
 exports.deleteAll = (req, res) => {
-    Organization.destroy({
+    Tutorial.destroy({
             where: {},
             truncate: false
         })
         .then(nums => {
-            res.send({ message: `${nums} Organizations were deleted successfully!` });
+            res.send({ message: `${nums} Tutorials were deleted successfully!` });
         })
         .catch(err => {
             res.status(500).send({
-                message: err.message || "Some error occurred while removing all organizations."
+                message: err.message || "Some error occurred while removing all tutorials."
             });
         });
 };
 
-// find all published Organization
+// find all published Tutorial
 exports.findAllPublished = (req, res) => {
-    Organization.findAll({ where: { published: true } })
+    Tutorial.findAll({ where: { published: true } })
         .then(data => {
             res.send(data);
         })
         .catch(err => {
             res.status(500).send({
-                message: err.message || "Some error occurred while retrieving organizations."
+                message: err.message || "Some error occurred while retrieving tutorials."
             });
         });
 };

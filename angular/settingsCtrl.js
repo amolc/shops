@@ -1,4 +1,4 @@
-app.controller('organizationCtrl', function($scope, $http, $window, $location, $sce, $timeout, store) {
+app.controller('settingsCtrl', function($scope, $http, $window, $location, $sce, $timeout, store) {
 
     var baseurl = "/api/";
 
@@ -10,12 +10,12 @@ app.controller('organizationCtrl', function($scope, $http, $window, $location, $
 
     $scope.init = function(req, res) {
 
-        alert("organization");
+        alert("settings");
     }
 
     
-    $scope.listorganization = function(req, res) {
-        $http.get(baseurl + 'organization/')
+    $scope.listsettings = function(req, res) {
+        $http.get(baseurl + 'settings/')
             .success(function(res) {
                 if (res.status == 'false') {} else {
                     $scope.supercategories = res.data;
@@ -25,11 +25,11 @@ app.controller('organizationCtrl', function($scope, $http, $window, $location, $
     }
 
 
-    $scope.addorganization = function(req, res) {
+    $scope.addsettings = function(req, res) {
 
-        alert("add organization");
+        alert("add settings");
         console.log($scope.data);
-        $http.get(baseurl + 'addorganizationni/')
+        $http.get(baseurl + 'addsettingsni/')
             .success(function(res) {
                 if (res.status == 'false') {} else {
                     $scope.categories = res.data;
@@ -39,7 +39,7 @@ app.controller('organizationCtrl', function($scope, $http, $window, $location, $
     }
 
 
-    $scope.updateorganization = function(req, res) {
+    $scope.updatesettings = function(req, res) {
         $http.get(baseurl + 'category/')
 
         .success(function(res) {

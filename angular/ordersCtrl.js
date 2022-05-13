@@ -1,4 +1,4 @@
-app.controller('organizationCtrl', function($scope, $http, $window, $location, $sce, $timeout, store) {
+app.controller('ordersCtrl', function($scope, $http, $window, $location, $sce, $timeout, store) {
 
     var baseurl = "/api/";
 
@@ -10,7 +10,7 @@ app.controller('organizationCtrl', function($scope, $http, $window, $location, $
 
     $scope.init = function(req, res) {
 
-        alert("organization");
+        alert("orders");
     }
 
     

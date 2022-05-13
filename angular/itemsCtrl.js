@@ -10,7 +10,7 @@ app.controller('organizationCtrl', function($scope, $http, $window, $location, $
 
     $scope.init = function(req, res) {
 
-        alert("organization");
+        alert("items");
     }
 
     

@@ -1,4 +1,4 @@
-app.controller('organizationCtrl', function($scope, $http, $window, $location, $sce, $timeout, store) {
+app.controller('customersCtrl', function($scope, $http, $window, $location, $sce, $timeout, store) {
 
     var baseurl = "/api/";
 
@@ -10,12 +10,12 @@ app.controller('organizationCtrl', function($scope, $http, $window, $location, $
 
     $scope.init = function(req, res) {
 
-        alert("organization");
+        alert("customers");
     }
 
     
     $scope.listorganization = function(req, res) {
-        $http.get(baseurl + 'organization/')
+        $http.get(baseurl + 'customers/')
             .success(function(res) {
                 if (res.status == 'false') {} else {
                     $scope.supercategories = res.data;
@@ -27,9 +27,9 @@ app.controller('organizationCtrl', function($scope, $http, $window, $location, $
 
     $scope.addorganization = function(req, res) {
 
-        alert("add organization");
+        alert("add customers");
         console.log($scope.data);
-        $http.get(baseurl + 'addorganizationni/')
+        $http.get(baseurl + 'addcustomersni/')
             .success(function(res) {
                 if (res.status == 'false') {} else {
                     $scope.categories = res.data;

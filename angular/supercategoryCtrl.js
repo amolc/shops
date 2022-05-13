@@ -9,6 +9,11 @@ app.controller('supercategoryCtrl', function($scope, $http, $window, $location, 
         alert("I am alert");
     }
 
+    $scope.init = function(req, res) {
+
+        alert("supercategory");
+    }
+
     $scope.listsupercategories = function(req, res) {
 
         $http.get(baseurl + 'supercategory/')
