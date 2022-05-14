@@ -3,7 +3,7 @@ module.exports = app => {
     const category = require("../controllers/category.controllers");
 
     var router = require("express").Router();
-    c/ Create a new category
+    // Create a new category
     router.post("/", category.create);
     // Retrieve all Category
     router.get("/", category.findAll);

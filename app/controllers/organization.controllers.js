@@ -1,5 +1,5 @@
 const db = require("../models");
-const Tutorial = db.organizations;
+const Organization = db.organizations;
 const Op = db.Sequelize.Op;
 
 // Create and Save a new Organization
@@ -34,8 +34,11 @@ exports.create = (req, res) => {
 // Retrieve all Organizations from the database.
 exports.findAll = (req, res) => {
     const title = req.query.title;
-    var condition = title ? { title: {
-            [Op.like]: `%${title}%` } } : null;
+    var condition = title ? {
+        title: {
+            [Op.like]: `%${title}%`
+        }
+    } : null;
 
     Organization.findAll({ where: condition })
         .then(data => {

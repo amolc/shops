@@ -1,0 +1,19 @@
+{
+    "folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../../algotrader"
+		},
+		{
+			"path": "../../autotrading"
+		},
+		{
+			"path": "../../quant1"
+		},
+		{
+			"path": "../../restapi"
+		}
+	]
+}

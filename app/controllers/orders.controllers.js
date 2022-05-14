@@ -1,5 +1,5 @@
 const db = require("../models");
-const Tutorial = db.orders;
+const Order = db.orders;
 const Op = db.Sequelize.Op;
 
 // Create and Save a new Order
@@ -34,8 +34,11 @@ exports.create = (req, res) => {
 // Retrieve all Orders from the database.
 exports.findAll = (req, res) => {
     const title = req.query.title;
-    var condition = title ? { title: {
-            [Op.like]: `%${title}%` } } : null;
+    var condition = title ? {
+        title: {
+            [Op.like]: `%${title}%`
+        }
+    } : null;
 
     Order.findAll({ where: condition })
         .then(data => {

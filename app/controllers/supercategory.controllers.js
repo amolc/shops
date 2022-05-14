@@ -1,5 +1,5 @@
 const db = require("../models");
-const Tutorial = db.supercategory;
+const Supercategory = db.supercategory;
 const Op = db.Sequelize.Op;
 
 // Create and Save a new Supercategory
@@ -26,7 +26,7 @@ exports.create = (req, res) => {
         })
         .catch(err => {
             res.status(500).send({
-                message: err.message || "Some error occurred while creating the Tutorial."
+                message: err.message || "Some error occurred while creating the Supercategory."
             });
         });
 };
@@ -34,8 +34,11 @@ exports.create = (req, res) => {
 // Retrieve all Supercategory from the database.
 exports.findAll = (req, res) => {
     const title = req.query.title;
-    var condition = title ? { title: {
-            [Op.like]: `%${title}%` } } : null;
+    var condition = title ? {
+        title: {
+            [Op.like]: `%${title}%`
+        }
+    } : null;
 
     Supercategory.findAll({ where: condition })
         .then(data => {
@@ -121,7 +124,7 @@ exports.delete = (req, res) => {
 
 // Delete all Supercategory from the database.
 exports.deleteAll = (req, res) => {
-    Tutorial.destroy({
+    Supercategory.destroy({
             where: {},
             truncate: false
         })

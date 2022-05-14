@@ -1,5 +1,5 @@
 const db = require("../models");
-const Tutorial = db.customers;
+const Customer = db.customers;
 const Op = db.Sequelize.Op;
 
 // Create and Save a new Customer
@@ -20,7 +20,7 @@ exports.create = (req, res) => {
     };
 
     // Save Customer in the database
-    Customer.create(tutorial)
+    Customer.create(Customer)
         .then(data => {
             res.send(data);
         })
@@ -34,8 +34,11 @@ exports.create = (req, res) => {
 // Retrieve all Customer from the database.
 exports.findAll = (req, res) => {
     const title = req.query.title;
-    var condition = title ? { title: {
-            [Op.like]: `%${title}%` } } : null;
+    var condition = title ? {
+        title: {
+            [Op.like]: `%${title}%`
+        }
+    } : null;
 
     Customer.findAll({ where: condition })
         .then(data => {
