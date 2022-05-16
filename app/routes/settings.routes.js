@@ -1,6 +1,6 @@
 module.exports = app => {
 
-    const settings = require("../controllers/setting.controllers");
+    const settings = require("../controllers/settings.controllers");
 
     var router = require("express").Router();
     // Create a new Setting

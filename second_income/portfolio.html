@@ -22,18 +22,18 @@
     <link href="./dist/css/demo.min.css" rel="stylesheet" />
     <link href="./dist/css/table.min.css" rel="stylesheet" />
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script>
-        $(document).ready(function() {
-            $('#show').click(function() {
-                $('.portfolioform').toggle("slide");
-            });
-        });
-    </script>
-
+    <!-- 1. Add the following script to your page. -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.js"></script>
+    <script src="/angular/js/angular-storage.min.js"></script>
+    <script src="/angular/js/angular-payments.js"></script>
+    <script src="/angular/js/app.js"></script>
+    <!-- <script src="assets/js/userCtrl.js"></script> -->
+    <script src="/angular/js/portfolioCtrl.js"></script>
 </head>
 
-<body>
+<body id="body" ng-app="website" ng-controller="portfolioCtrl" ng-init="list()">
+    <!-- Start Top Header Bar -->
+
     <div class="page">
         <header class="navbar navbar-expand-md navbar-light d-print-none">
             <div class="container-xl">
@@ -524,7 +524,7 @@
                         <div id="show" class="btn btn-primary" style="width:150px;">Add Portfolio</div>
                         <div style="height:5px;"></div>
 
-                        <div style="display: none;" class="portfolioform">
+                        <div class="portfolioform">
                             <form class="form">
                                 <div class="form">
                                     <div class="table-responsive">
@@ -580,13 +580,13 @@
                                                 <tr>
                                                     <th>NAME</th>
                                                     <th>PORTFOLIO CODE</th>
-                                                    <th>LAST PRICE</th>
-                                                    <th>CHANGES</th>
-                                                    <th>% CHANGE</th>
-                                                    <th>HIGH</th>
-                                                    <th>LOW</th>
-                                                    <th>VOLUME</th>
-                                                    <th>MKT CAP</th>
+                                                    <th>BUY PRICE</th>
+                                                    <th>NO OF SHARES</th>
+                                                    <th>COST</th>
+                                                    <th>PROFITLOSS</th>
+                                                    <th>LASTPRICE</th>
+                                                    <th>%CHANGE</th>
+                                                    <th>CLOSE</th>
                                                     <th>YIELD</th>
                                                 </tr>
                                             </thead>
@@ -652,6 +652,37 @@
                                                     </tr>
 
                                             </tbody>
+                                            <tbody>
+
+                                                <tr ng-repeat="portfolio in portfolios">
+                                                    <td class="text-bold-500">{{portfolio.org_id}}</td>
+                                                    <td>{{portfolio.name}}</td>
+                                                    <td>{{portfolio.description}}</td>
+                                                    <td>XXX</td>
+                                                    <td>XXX</td>
+                                                    <td>XXX</td>
+                                                    <td>XXX</td>
+                                                    <td>XXX</td>
+                                                    <td>XXX</td>
+                                                    <td>XXX</td>
+                                                    <tr>
+                                                        <td class="text-bold-500">HINDUSTAN UNILEVER LTD</td>
+                                                        <td>532540</td>
+                                                        <td class="text-bold-500">XXX</td>
+                                                        <td>XXX</td>
+                                                        <td>XXX</td>
+                                                        <td>XXX</td>
+                                                        <td>XXX</td>
+                                                        <td>XXX</td>
+                                                        <td>XXX</td>
+                                                        <td>XXX</td>
+                                                    </tr>
+
+
+
+
+                                            </tbody>
+
                                         </table>
                                     </div>
 

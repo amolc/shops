@@ -1,6 +1,6 @@
 module.exports = app => {
 
-    const items = require("../controllers/item.controllers");
+    const items = require("../controllers/items.controllers");
 
     var router = require("express").Router();
     // Create a new Item

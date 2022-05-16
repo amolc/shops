@@ -1,6 +1,6 @@
 module.exports = app => {
 
-    const orders = require("../controllers/order.controllers");
+    const orders = require("../controllers/orders.controllers");
 
     var router = require("express").Router();
     // Create a new Order

@@ -1,5 +1,5 @@
 const db = require("../models");
-const Tutorial = db.settings;
+const Setting = db.settings;
 const Op = db.Sequelize.Op;
 
 // Create and Save a new Setting
