@@ -146,6 +146,34 @@ app.controller('shopcartCtrl', function($scope, $http, $window, $location, $sce,
     };
 
 
+    $scope.addorder = function(req, res) {
+
+
+
+        console.log($scope.data);
+
+        if ($scope.data.id != "") {
+            $http.put($scope.baseurl + 'items/', $scope.data)
+                .success(function(res) {
+                    if (res.status == 'false') {} else {
+                        $scope.response = res.data;
+                        console.log('message: ', $scope.response);
+                        window.location.reload();
+                    }
+                }).error(function() {});
+        }
+        $http.post($scope.baseurl + 'items/', $scope.data)
+            .success(function(res) {
+                if (res.status == 'false') {} else {
+                    $scope.response = res.data;
+                    console.log('message: ', $scope.response);
+                    window.location.reload();
+                }
+            }).error(function() {});
+
+    }
+
+
 
     //orderCtrl ends
 });
