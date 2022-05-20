@@ -97,7 +97,7 @@ app.controller('shopcartCtrl', function($scope, $http, $window, $location, $sce,
 
         cart = {}
         cart.id = id;
-        cart.name = name;
+        cart.itemname = name;
         cart.price = price;
         cart.qty = qty;
         cart.total = price * qty;

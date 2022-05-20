@@ -32,10 +32,11 @@ app.controller('ordersCtrl', function($scope, $http, $window, $location, $sce, $
 
         orderdetail = {};
         orderdetail.orderid = id.toString();
+        orderdetail.ordername = "20";
 
 
 
-        $http.post($scope.baseurl + 'orders/orderdetail/', orderdetail)
+        $http.post($scope.baseurl + 'orders/orderdetail', orderdetail)
             .success(function(res) {
                 if (res.status == 'false') {} else {
                     $scope.orderdetails = res.data;
