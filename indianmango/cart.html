@@ -204,15 +204,13 @@ FACEBOOK: https://www.facebook.com/themefisher
                                                 <td class="">
                                                     <div class="product-info">
 
-                                                        <a hrefc="#!" id="itemName">{{cart.name}}</a>
+                                                        <a hrefc="#!" id="itemName">{{data.name}}</a>
                                                     </div>
                                                 </td>
-                                                <td class="" id="itemPrice">{{cart.price}}</td>
-                                                <td class="" id="itemQuantity">{{cart.qty}}</td>
-                                                <td class="">{{cart.price * cart.qty}}</td>
-                                                <td class="">
-                                                    <a class="product-remove" href="javascript:void(0)" ng-click="cartDelete(cart.cartID)">Remove</a>
-                                                </td>
+                                                <td class="" id="itemPrice">{{data.price}}</td>
+                                                <td class="" id="itemQuantity">{{data.qty}}</td>
+                                                <td class="">{{data.price * data.qty}}</td>
+
                                             </tr>
                                             <!-- <tr class="">
                           <td class="">

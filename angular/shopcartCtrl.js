@@ -1,16 +1,20 @@
 app.controller('shopcartCtrl', function($scope, $http, $window, $location, $sce, $timeout, store) {
 
+
     if (document.location.hostname == "localhost") {
         $scope.baseurl = "http://localhost:7000/api/";
     } else {
         $scope.baseurl = "https://api.superadmin.shop/api/";
     }
 
+
     $scope.data = {}
     $scope.givealert = function(req, res) {
 
-        alert("I am alert");
+        console.log("error")
     }
+
+
 
     $scope.init = function(req, res) {
 
@@ -30,7 +34,7 @@ app.controller('shopcartCtrl', function($scope, $http, $window, $location, $sce,
 
     $scope.add = function(req, res) {
 
-        alert($scope.data.thumbnail);
+
 
         console.log($scope.data);
         if ($scope.data.id != "") {
@@ -90,12 +94,15 @@ app.controller('shopcartCtrl', function($scope, $http, $window, $location, $sce,
 
     $scope.addcart = function(id, name, price, qty) {
 
-        cart = {}
 
-        cart.id = id
-        cart.name = name
-        cart.price = price
-        cart.qty = qty
+        cart = {}
+        cart.id = id;
+        cart.name = name;
+        cart.price = price;
+        cart.qty = qty;
+        cart.total = price * qty;
+
+
 
         localStorage.setItem('items', JSON.stringify(cart));
 
@@ -106,8 +113,8 @@ app.controller('shopcartCtrl', function($scope, $http, $window, $location, $sce,
     $scope.cartlist = function() {
 
         cart = localStorage.getItem('items');
-        $scope.cart = JSON.parse(cart);
-        console.log($scope.cart);
+        $scope.data = JSON.parse(cart);
+        console.log($scope.data);
 
     }
 
@@ -146,32 +153,74 @@ app.controller('shopcartCtrl', function($scope, $http, $window, $location, $sce,
     };
 
 
-    $scope.addorder = function(req, res) {
+    $scope.order = function(req, res) {
 
+        var date = Date(Date.now()).toString();
 
+        $scope.data.org_id = 1;
+        $scope.data.paymentId = 0;
+        $scope.data.amount = $scope.data.total;
+        localStorage.setItem('amount', $scope.data.total);
+        $scope.data.date = date
+        $scope.data.setstatus = "Pending";
 
-        console.log($scope.data);
-
-        if ($scope.data.id != "") {
-            $http.put($scope.baseurl + 'items/', $scope.data)
-                .success(function(res) {
-                    if (res.status == 'false') {} else {
-                        $scope.response = res.data;
-                        console.log('message: ', $scope.response);
-                        window.location.reload();
-                    }
-                }).error(function() {});
-        }
-        $http.post($scope.baseurl + 'items/', $scope.data)
+        $http.post($scope.baseurl + 'orders/', $scope.data)
             .success(function(res) {
                 if (res.status == 'false') {} else {
                     $scope.response = res.data;
-                    console.log('message: ', $scope.response);
-                    window.location.reload();
+                    console.log('orderinsert: ', $scope.response);
+                    localStorage.setItem('orderId', $scope.response.id);
+                    window.location.assign("./payment.html");
                 }
             }).error(function() {});
 
     }
+
+    $scope.stripeCallback = function(code, result) {
+
+        if (result.error) {
+            console.log(result.error)
+        } else {
+            $scope.data = {}
+            $scope.data.token = result.id;
+            $scope.data.amount = localStorage.getItem('amount');
+            $scope.data.orderId = localStorage.getItem('orderId');
+            $scope.data.orgID = 1;
+
+            console.log($scope.data);
+            $http.post($scope.baseurl + 'orders/charge', $scope.data, $scope.config)
+                .success(function(data, status, headers, config) {
+                    $scope.response = data;
+                    console.log($scope.response.data);
+                    localStorage.setItem('orderDetails', JSON.stringify($scope.response.data));
+                    window.location.assign("./thankyou.html");
+
+                })
+                .error(function(data, status, header, config) {
+                    $scope.ResponseDetails = "Data: " + data
+                });
+        }
+    };
+
+    $scope.orderdetails = function(req, res) {
+        $scope.orderdetails = JSON.parse(localStorage.getItem('orderDetails'));
+        console.log($scope.orderdetails);
+    }
+    $scope.home = function(req, res) {
+
+        window.location.assign("./index.html");
+
+    }
+
+    $scope.remove = function(req, res) {
+        localStorage.setItem('items', '');
+        window.location.assign("./index.html");
+
+    }
+
+
+
+
 
 
 

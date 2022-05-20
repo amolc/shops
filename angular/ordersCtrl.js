@@ -1,6 +1,10 @@
 app.controller('ordersCtrl', function($scope, $http, $window, $location, $sce, $timeout, store) {
 
-    var baseurl = "/api/";
+    if (document.location.hostname == "localhost") {
+        $scope.baseurl = "http://localhost:7000/api/";
+    } else {
+        $scope.baseurl = "https://api.superadmin.shop/api/";
+    }
 
     $scope.data = {}
     $scope.givealert = function(req, res) {
@@ -10,50 +14,123 @@ app.controller('ordersCtrl', function($scope, $http, $window, $location, $sce, $
 
     $scope.init = function(req, res) {
 
-        alert("orders");
+
     }
 
-    
-    $scope.listorganization = function(req, res) {
-        $http.get(baseurl + 'organization/')
+    $scope.list = function(req, res) {
+        console.log("list");
+        $http.get($scope.baseurl + 'orders/')
             .success(function(res) {
                 if (res.status == 'false') {} else {
-                    $scope.supercategories = res.data;
-                    console.log('categories: ', $scope.supercategories);
+                    $scope.dataset = res.data;
+                    console.log('dataset: ', $scope.dataset);
+                }
+            }).error(function() {});
+    }
+
+    $scope.detail = function(id) {
+
+        orderdetail = {};
+        orderdetail.orderid = id.toString();
+
+
+
+        $http.post($scope.baseurl + 'orders/orderdetail/', orderdetail)
+            .success(function(res) {
+                if (res.status == 'false') {} else {
+                    $scope.orderdetails = res.data;
+                    console.log('data: ', $scope.orderdetails);
                 }
             }).error(function() {});
     }
 
 
-    $scope.addorganization = function(req, res) {
+    $scope.add = function(req, res) {
 
-        alert("add organization");
         console.log($scope.data);
-        $http.get(baseurl + 'addorganizationni/')
+
+        if (typeof $scope.data.id == 'undefined') {
+            alert($scope.data.id);
+            $http.post($scope.baseurl + 'orders/', $scope.data)
+                .success(function(res) {
+                    if (res.status == 'false') {} else {
+                        $scope.response = res.data;
+                        console.log('message: ', $scope.response);
+                        window.location.reload();
+                    }
+                }).error(function() {});
+
+        } else {
+
+            alert($scope.data.id);
+            $http.patch($scope.baseurl + 'orders/', $scope.data)
+                .success(function(res) {
+                    if (res.status == 'false') {} else {
+                        $scope.response = res.data;
+                        console.log('message: ', $scope.response);
+                        window.location.reload();
+                    }
+                }).error(function() {});
+        }
+
+
+    }
+
+
+    $scope.update = function(id) {
+        $http.get($scope.baseurl + 'orders/' + id)
             .success(function(res) {
                 if (res.status == 'false') {} else {
-                    $scope.categories = res.data;
-                    console.log('categories: ', $scope.categories);
+                    $scope.data = res.data;
+                    console.log('data: ', $scope.data);
                 }
             }).error(function() {});
     }
 
-
-    $scope.updateorganization = function(req, res) {
-        $http.get(baseurl + 'category/')
-
-        .success(function(res) {
-            if (res.status == 'false') {} else {
-                $scope.categories = res.data;
-                console.log('categories: ', $scope.categories);
-            }
-        }).error(function() {});
+    $scope.delete = function(id) {
+        $http.delete($scope.baseurl + 'orders/' + id)
+            .success(function(res) {
+                if (res.status == 'false') {} else {
+                    $scope.response = res.data;
+                    console.log('data: ', $scope.response);
+                }
+            }).error(function() {});
+        $window.location.reload();
     }
+
+
+
+
 
     $scope.redirect = function() {
         //console.log("redirect");
         location.href = 'index.html';
     }
+
+
+    $scope.updateattachment = function() {
+        console.log('yes');
+        var img = new Image();
+        var newfile = document.getElementById("file_browse").files[0];
+        var fileDisplayArea = document.getElementById('fileDisplayArea');
+        var imageType = /image.*/;
+        if (newfile.type.match(imageType)) {
+            var oFReader = new FileReader();
+            oFReader.onload = function(oFREvent) {
+                $scope.data.thumbnail = document.getElementById("file_browse").files[0].name;
+                console.log($scope.data.thumbnail);
+                $scope.data.thumbnailimage = oFReader.result;
+                console.log($scope.data.thumbnailimage);
+                $scope.$apply();
+
+            };
+            oFReader.readAsDataURL(newfile);
+            console.log($scope.data);
+        } else {
+            $scope.item.item_imagename = '';
+            $scope.item.item_image = '';
+        }
+    };
 
 
 
