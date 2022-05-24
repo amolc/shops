@@ -1143,7 +1143,7 @@ input[type="tel"]:focus {
 .product-item .product-thumb img {
     width: 100%;
     height: auto;
-    border:1px solid rgb(207, 206, 206);
+    border: 1px solid rgb(207, 206, 206);
 }
 
 .product-item .product-thumb .bage {
@@ -2796,15 +2796,14 @@ input[type="tel"]:focus {
     font-size: 20px;
     color: #555;
 }
-#logo
-{
-	max-height: 40px;
-	margin-right: 20px;
+
+#logo {
+    max-height: 40px;
+    margin-right: 20px;
     margin-top: 10px;
     margin-left: 10px;
-	display: inline-block;
+    display: inline-block;
 }
-
 
 
 /*# sourceMappingURL=style.css.map */

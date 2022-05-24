@@ -36,7 +36,7 @@ app.use('/fishyhub', express.static(__dirname + '/fishyhub'));
 app.use('/stockmarketmantra', express.static(__dirname + '/stockmarketmantra'));
 app.use('/mango', express.static(__dirname + '/mango'));
 app.use('/second_income', express.static(__dirname + '/second_income'));
-app.use('/superadmin', express.static(__dirname + '/superadmin'));
+app.use('/', express.static(__dirname + '/superadmin'));
 app.use('/scripts', express.static(__dirname + '/scripts'));
 app.use('/expresssg', express.static(__dirname + '/expresssg'));
 app.use('/romip', express.static(__dirname + '/romip'));

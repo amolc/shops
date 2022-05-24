@@ -1,6 +1,10 @@
-app.controller('organizationCtrl', function($scope, $http, $window, $location, $sce, $timeout, store) {
+app.controller('supercategoryCtrl', function($scope, $http, $window, $location, $sce, $timeout, store) {
 
-    var baseurl = "/api/";
+    if (document.location.hostname == "localhost") {
+        $scope.baseurl = "http://localhost:7000/api/";
+    } else {
+        $scope.baseurl = "https://api.superadmin.shop/api/";
+    }
 
     $scope.data = {}
     $scope.givealert = function(req, res) {
@@ -10,37 +14,36 @@ app.controller('organizationCtrl', function($scope, $http, $window, $location, $
 
     $scope.init = function(req, res) {
 
-        alert("items");
+
     }
 
-    
-    $scope.listorganization = function(req, res) {
-        $http.get(baseurl + 'organization/')
+    $scope.list = function(req, res) {
+        $http.get($scope.baseurl + 'supercategory/')
             .success(function(res) {
                 if (res.status == 'false') {} else {
-                    $scope.supercategories = res.data;
-                    console.log('categories: ', $scope.supercategories);
+                    $scope.dataset = res.data;
+                    console.log('dataset: ', $scope.dataset);
                 }
             }).error(function() {});
     }
 
 
-    $scope.addorganization = function(req, res) {
+    $scope.add = function(req, res) {
 
-        alert("add organization");
+        alert("add");
         console.log($scope.data);
-        $http.get(baseurl + 'addorganizationni/')
+        $http.post($scope.baseurl + 'supercategory/', $scope.data)
             .success(function(res) {
                 if (res.status == 'false') {} else {
-                    $scope.categories = res.data;
-                    console.log('categories: ', $scope.categories);
+                    $scope.message = res.data;
+                    console.log('message: ', $scope.message);
                 }
             }).error(function() {});
     }
 
 
-    $scope.updateorganization = function(req, res) {
-        $http.get(baseurl + 'category/')
+    $scope.update = function(req, res) {
+        $http.get($scope.baseurl + 'supercategory/')
 
         .success(function(res) {
             if (res.status == 'false') {} else {
