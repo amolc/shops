@@ -40,15 +40,13 @@ app.use('/', express.static(__dirname + '/superadmin'));
 app.use('/scripts', express.static(__dirname + '/scripts'));
 app.use('/expresssg', express.static(__dirname + '/expresssg'));
 app.use('/romip', express.static(__dirname + '/romip'));
-
+app.use('/romiresume', express.static(__dirname + '/romiresume'));
 
 
 /* Sequelize */
 
 const db = require("./app/models");
 db.sequelize.sync();
-
-
 
 // console.log(msg);
 
