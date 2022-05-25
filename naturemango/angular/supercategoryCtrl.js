@@ -1,7 +1,7 @@
 app.controller('supercategoryCtrl', function($scope, $http, $window, $location, $sce, $timeout, store) {
 
     if (document.location.hostname == "localhost") {
-        $scope.baseurl = "http://localhost:7000/api/";
+        $scope.baseurl = "https://api.superadmin.shop/api/";
     } else {
         $scope.baseurl = "https://api.superadmin.shop/api/";
     }
