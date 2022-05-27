@@ -2,11 +2,12 @@ app.controller('shopcartCtrl', function($scope, $http, $window, $location, $sce,
 
 
     if (document.location.hostname == "localhost") {
-        $scope.baseurl = "https://api.superadmin.shop/api/";
+        $scope.baseurl = "http://localhost:7000/api/";
     } else {
         $scope.baseurl = "https://api.superadmin.shop/api/";
     }
 
+    $scope.orgId = 30;
 
     $scope.data = {}
     $scope.givealert = function(req, res) {
@@ -22,7 +23,7 @@ app.controller('shopcartCtrl', function($scope, $http, $window, $location, $sce,
     }
 
     $scope.list = function(req, res) {
-        $http.get($scope.baseurl + 'items/')
+        $http.get($scope.baseurl + 'items/list/' + $scope.orgId)
             .success(function(res) {
                 if (res.status == 'false') {} else {
                     $scope.dataset = res.data;
