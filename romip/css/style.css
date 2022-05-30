@@ -17,8 +17,8 @@ body {
   font-family: "Roboto", sans-serif;
   -webkit-font-smoothing: antialiased;
   font-size: 16px;
-  color: #6F8BA4;
-  font-weight: 400;
+  color: #263b4d;
+  font-weight: 600;
 }
 
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
@@ -1522,7 +1522,13 @@ a:focus {
 }
 
 h4, .h4 {
-  font-size: 36px;
+  font-size: 22px;
 }
 
+.dr {
+  font-size: 28px;
+  font-family: "Exo", sans-serif;
+  color: #223a66;
+  font-weight: 800;  
+}
 /*# sourceMappingURL=maps/style.css.map */
