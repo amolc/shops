@@ -41,6 +41,7 @@ app.use('/scripts', express.static(__dirname + '/scripts'));
 app.use('/expresssg', express.static(__dirname + '/expresssg'));
 app.use('/romip', express.static(__dirname + '/romip'));
 app.use('/romiresume', express.static(__dirname + '/romiresume'));
+app.use('/smergers', express.static(__dirname + '/smergers'));
 
 
 /* Sequelize */
