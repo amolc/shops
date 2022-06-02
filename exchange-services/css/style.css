@@ -9720,8 +9720,70 @@ a.text-dark:hover, a.text-dark:focus {
   color: #000;
   font-weight: 500;
 }
+.reserves1-link {
+  font-size: 14px;
+  color: #007bff;
+  font-weight: 500;
+}
+.kbd {
+  font-family: poppins;
+  font-size: 11px;
+  color: #000;
+  font-weight: 400;
+  background-color: #cfcfcf;
+}
 .usd {
   font-size: 11px;
   color: #000;
   font-weight: 500;
+}
+.usd1 {
+  font-size: 15px;
+  color: #000;
+  font-weight: 500;
+}
+.card1 {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #3d464d;
+  background-clip: border-box;
+  border: none;
+  color: #ffd333;
+  font-size: 25px;
+  font-weight: 500;
+}
+.card2 {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #f3c728;
+  background-clip: border-box;
+  border: none;
+  color: #3d464d;
+  font-size: 25px;
+  font-weight: 500;
+}
+.dropdown-menu {
+  background-color: #fff;
+}
+.button {
+  background-color: #555555; /* Green */
+  border: none;
+  color: white;
+  padding: 10px 28px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 18px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+.center {
+  margin-left: auto;
+  margin-right: auto;
 }
