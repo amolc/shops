@@ -24,9 +24,22 @@
 
     <!-- Customized Bootstrap Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
+
+    <!-- 1. Add the following script to your page. -->
+    <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.js"></script>
+    <script src="https://superadmin.shop/angular/angular-storage.min.js"></script>
+    <script src="https://superadmin.shop/angular/angular-payments.js"></script>
+    <script src="https://superadmin.shop/angular/app.js"></script>
+    <script src="./angular/shopcartCtrl.js"></script>
+    <!-- <script src="../angular/shopcartCtrl.js"></script> -->
+
+    <!-- 1. Add the following script to your page. -->
+
+
 </head>
 
-<body>
+<body class="theme-light" ng-app="website" ng-controller="shopcartCtrl" ng-init="init()">
     <!-- Topbar Start -->
     <div class="container-fluid">
         <div class="row bg-secondary py-1 px-xl-5">
@@ -56,18 +69,16 @@
                         </div>
                     </div>
                     <div class="btn-group">
-                        <button type="button" class="btn btn-sm btn-light dropdown-toggle" data-toggle="dropdown">EN</button>
-                        <div class="dropdown-menu dropdown-menu-right">
-                            <button class="dropdown-item" type="button">FR</button>
-                            <button class="dropdown-item" type="button">AR</button>
-                            <button class="dropdown-item" type="button">RU</button>
-                        </div>
+
+
                     </div>
                 </div>
                 <div class="d-inline-flex align-items-center d-block d-lg-none">
                     <a href="" class="btn px-0 ml-2">
                         <i class="fas fa-heart text-dark"></i>
-                        <span class="badge text-dark border border-dark rounded-circle" style="padding-bottom: 2px;">0</span>
+                        <span class="badge text-dark border border-dark rounded-circle" style="padding-bottom: 2px;">
+                         
+                        </span>
                     </a>
                     <a href="" class="btn px-0 ml-2">
                         <i class="fas fa-shopping-cart text-dark"></i>
@@ -82,6 +93,15 @@
                     <span class="h1 text-uppercase text-primary bg-dark px-2">INR2USD</span>
                     <span class="h1 text-uppercase text-dark bg-primary px-2 ml-n1">EXCHANGE</span>
                 </a>
+            </div>
+            <div class="col-lg-4">
+
+            </div>
+            <div class="col-lg-4" style="text-align:right;">
+
+                <span class="h5 text-uppercase text-primary bg-dark px-2">INR2USD</span>
+                <span class="h5 text-uppercase text-dark bg-primary px-2 ml-n1">{{inr2usd}}</span>
+
             </div>
 
 
@@ -145,12 +165,15 @@
                                         <div class="col-lg-4">
                                             <form class="form">
                                                 <div class="dropdown">
-                                                    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Select Exchange
+                                                    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Select Type 
                                                     <span class="caret"></span></button>
                                                     <ul class="dropdown-menu">
+                                                        <li><a href="#">UPI/GPay</a></li>
                                                         <li><a href="#">Advcash</a></li>
                                                         <li><a href="#">Bitcoin</a></li>
                                                         <li><a href="#">Perfect Money</a></li>
+                                                        <li><a href="#">ETH</a></li>
+                                                        <li><a href="#">Tether</a></li>
                                                     </ul>
                                                 </div>
                                             </form>
@@ -166,13 +189,18 @@
                                         <div class="col-lg-4">
                                             <form class="form">
                                                 <div class="dropdown">
-                                                    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Select Exchange
+                                                    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Select Type
                                                     <span class="caret"></span></button>
                                                     <ul class="dropdown-menu">
                                                         <li><a href="#">Advcash</a></li>
                                                         <li><a href="#">Bitcoin</a></li>
                                                         <li><a href="#">Perfect Money</a></li>
+                                                        <li><a href="#">UPI/GPay</a></li>
+                                                        <li><a href="#">Bank Transfer</a></li>
+                                                        <li><a href="#">Tether</a></li>
+                                                        <li><a href="#">ETH</a></li>
                                                     </ul>
+
                                                 </div>
                                             </form>
                                         </div>
@@ -189,99 +217,58 @@
 
 
 
-                            <div class="row px-xl-6">
-                                <div class="col-lg-12 mt-4">
-                                    <div class="card p-3">
-                                        <span class="reserves" style="text-align:center;"><img src="img/trading.png" style="width:18px; height:18px;"> Latest Exchange</span>
-                                        <table class="table center" style="width:90%;">
-                                            <div class="table table-stripped">
-                                                <thead>
-                                                    <tr>
-                                                        <th>Direction</th>
-                                                        <th>Total Sent</th>
-                                                        <th>Total Received</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <td><img src="img/tether-usdt.png" style="width:32px; height:32px;"><span class="reserves1-link">Tether USDT ERC-20</span>
-                                                            <img src="img/rt-arrow.png" style="width:20px;" class="ml-2"><img src="img/upi.png" style="width:20px;" class="ml-2">
-                                                            <span class="reserves1-link">UPI(Bhim/Gpay/Phonepe & etc.) INR</span>
-                                                        </td>
-                                                        <td>109.00 <span class="usd">USDT</span></span>
-                                                        </td>
-                                                        <td>8066.00 <span class="usd">INR</span></span>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td><img src="img/tether-usdt.png" style="width:32px; height:32px;"><span class="reserves1-link">Tether USDT ERC-20</span>
-                                                            <img src="img/rt-arrow.png" style="width:20px;" class="ml-2"><img src="img/upi.png" style="width:20px;" class="ml-2">
-                                                            <span class="reserves1-link">UPI(Bhim/Gpay/Phonepe & etc.) INR</span>
-                                                        </td>
-                                                        <td>109.00 <span class="usd">USDT</span></span>
-                                                        </td>
-                                                        <td>8066.00 <span class="usd">INR</span></span>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td><img src="img/tether-usdt.png" style="width:32px; height:32px;"><span class="reserves1-link">Tether USDT ERC-20</span>
-                                                            <img src="img/rt-arrow.png" style="width:20px;" class="ml-2"><img src="img/upi.png" style="width:20px;" class="ml-2">
-                                                            <span class="reserves1-link">UPI(Bhim/Gpay/Phonepe & etc.) INR</span>
-                                                        </td>
-                                                        <td>109.00 <span class="usd">USDT</span></span>
-                                                        </td>
-                                                        <td>8066.00 <span class="usd">INR</span></span>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td><img src="img/tether-usdt.png" style="width:32px; height:32px;"><span class="reserves1-link">Tether USDT ERC-20</span>
-                                                            <img src="img/rt-arrow.png" style="width:20px;" class="ml-2"><img src="img/upi.png" style="width:20px;" class="ml-2">
-                                                            <span class="reserves1-link">UPI(Bhim/Gpay/Phonepe & etc.) INR</span>
-                                                        </td>
-                                                        <td>109.00 <span class="usd">USDT</span></span>
-                                                        </td>
-                                                        <td>8066.00 <span class="usd">INR</span></span>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td><img src="img/tether-usdt.png" style="width:32px; height:32px;"><span class="reserves1-link">Tether USDT ERC-20</span>
-                                                            <img src="img/rt-arrow.png" style="width:20px;" class="ml-2"><img src="img/upi.png" style="width:20px;" class="ml-2">
-                                                            <span class="reserves1-link">UPI(Bhim/Gpay/Phonepe & etc.) INR</span>
-                                                        </td>
-                                                        <td>109.00 <span class="usd">USDT</span></span>
-                                                        </td>
-                                                        <td>8066.00 <span class="usd">INR</span></span>
-                                                        </td>
-                                                    </tr>
-                                                </tbody>
-                                            </div>
-                                        </table>
+                            <div class="row">
+                                <div class="col-lg-12 mt-12">
+                                    <div class="mt-4"></div>
+                                    <div class="reserves"><img src="img/arrows.png" style="width:32px; height:32px;">
+                                        <span class="reserves ml-2">Latest Exchanges</span>
+                                    </div>
+                                    <hr>
+                                    <div class="reserves">
+                                        <img src="img/flag.png" style="width:16px; height:16px;">
+                                        <span class="reserves1-link ml-3 mr-5">Perfect Money - UPI(Bhim/Gpay/Phone & etc.</span>
+                                        <span class="reserves1 ml-5 d-flex float-right"><kbd class="kbd">17 hours ago</kbd> <span class="usd"></span></span>
+                                    </div>
+                                    <div class="reserves"><img src="img/pm.png" style="width:25px; height:25px;">
+                                        <span class="usd1 ml-2 mr-5">227<span class="usd">USD</span></span>
+                                        <span class="arrows"><img src="img/arrows1.png" style="width:25px; height: 25px;"></span>
+                                        <span class="arrows"><img src="img/upi.png" style="width:25px; height: 25px;"></span>
+                                        <span class="usd1 ml-2 mr-5">17252<span class="usd">INR</span></span>
+                                    </div>
+                                    <div class="reserves">
+                                        <img src="img/flag.png" style="width:16px; height:16px;">
+                                        <span class="reserves1-link ml-3 mr-5">Perfect Money - UPI(Bhim/Gpay/Phone & etc.</span>
+                                        <span class="reserves1 ml-5 d-flex float-right"><kbd class="kbd">16 hours ago</kbd> <span class="usd"></span></span>
+                                    </div>
+                                    <div class="reserves"><img src="img/pm.png" style="width:25px; height:25px;">
+                                        <span class="usd1 ml-2 mr-5">600<span class="usd">USD</span></span>
+                                        <span class="arrows"><img src="img/arrows1.png" style="width:25px; height: 25px;"></span>
+                                        <span class="arrows"><img src="img/upi.png" style="width:25px; height: 25px;"></span>
+                                        <span class="usd1 ml-2 mr-5">45600<span class="usd">INR</span></span>
+                                    </div>
+                                    <div class="reserves">
+                                        <img src="img/flag.png" style="width:16px; height:16px;">
+                                        <span class="reserves1-link ml-3 mr-5">Perfect Money - UPI(Bhim/Gpay/Phone & etc.</span>
+                                        <span class="reserves1 ml-5 d-flex float-right"><kbd class="kbd">16 hours ago</kbd> <span class="usd"></span></span>
+                                    </div>
+                                    <div class="reserves"><img src="img/pm.png" style="width:25px; height:25px;">
+                                        <span class="usd1 ml-2 mr-5">600<span class="usd">USD</span></span>
+                                        <span class="arrows"><img src="img/arrows1.png" style="width:25px; height: 25px;"></span>
+                                        <span class="arrows"><img src="img/upi.png" style="width:25px; height: 25px;"></span>
+                                        <span class="usd1 ml-2 mr-5">45600<span class="usd">INR</span></span>
+                                    </div>
+                                    <div class="reserves">
+                                        <img src="img/flag.png" style="width:16px; height:16px;">
+                                        <span class="reserves1-link ml-3 mr-5">Perfect Money - UPI(Bhim/Gpay/Phone & etc.</span>
+                                        <span class="reserves1 ml-5 d-flex float-right"><kbd class="kbd">16 hours ago</kbd> <span class="usd"></span></span>
+                                    </div>
+                                    <div class="reserves"><img src="img/pm.png" style="width:25px; height:25px;">
+                                        <span class="usd1 ml-2 mr-5">600<span class="usd">USD</span></span>
+                                        <span class="arrows"><img src="img/arrows1.png" style="width:25px; height: 25px;"></span>
+                                        <span class="arrows"><img src="img/upi.png" style="width:25px; height: 25px;"></span>
+                                        <span class="usd1 ml-2 mr-5">45600<span class="usd">INR</span></span>
+                                    </div>
 
-                                    </div>
-                                    <div class="row px-xl-6">
-                                        <div class="col-lg-12 mt-4">
-                                            <div class="card p-3">
-                                                <div class="row">
-                                                    <div class="col-lg-3" style="text-align:center;">
-                                                        <span class="reserves">8556</span><br>
-                                                        <span class="reserves1">Client trust us</span>
-                                                    </div>
-                                                    <div class="col-lg-3" style="text-align:center;">
-                                                        <span class="reserves">46</span><br>
-                                                        <span class="reserves1">Exchanges Today</span>
-                                                    </div>
-                                                    <div class="col-lg-3" style="text-align:center;">
-                                                        <span class="reserves">28771</span><br>
-                                                        <span class="reserves1">Total Exchanges</span>
-                                                    </div>
-                                                    <div class="col-lg-3" style="text-align:center;">
-                                                        <span class="reserves">$97,880</span><br>
-                                                        <span class="reserves1">Exchanged in (USD)</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
                                 </div>
 
                             </div>
