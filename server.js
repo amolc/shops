@@ -47,22 +47,6 @@ app.use('/15', express.static(__dirname + '/15'));
 
 
 
-/* Sequelize */
-
-const db = require("./app/models");
-db.sequelize.sync();
-
-// console.log(msg);
-
-require("./app/routes/category.routes")(app);
-require("./app/routes/customers.routes")(app);
-require("./app/routes/items.routes")(app);
-require("./app/routes/orders.routes")(app);
-require("./app/routes/organization.routes")(app);
-require("./app/routes/settings.routes")(app);
-require("./app/routes/supercategory.routes")(app);
-require("./app/routes/tutorial.routes")(app);
-
 
 global.appRoot = path.resolve(__dirname);
 app.listen(19000);
