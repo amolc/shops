@@ -1415,8 +1415,8 @@ h3 {
 
 /* line 1, ../../Arafath/CL/january 2020/237. Real Estate/HTML/scss/_about.scss */
 .about_area {
-  padding-top: 180px;
-  padding-bottom: 180px;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 @media (max-width: 767px) {
@@ -1754,7 +1754,7 @@ h3 {
 /* line 1, ../../Arafath/CL/january 2020/237. Real Estate/HTML/scss/_facilites.scss */
 .our_facilitics_area {
   position: relative;
-  padding-top: 170px;
+  padding-top: 60px;
   padding-bottom: 180px;
   z-index: 0;
 }
@@ -1809,10 +1809,12 @@ h3 {
 
 /* line 40, ../../Arafath/CL/january 2020/237. Real Estate/HTML/scss/_facilites.scss */
 .our_facilitics_area .single_feature {
-  background: #fff;
+  background: #f5f9fb;
   border: 1px solid #ebebeb;
   padding: 32px 20px 65px 20px;
+  border-radius: 25px;
 }
+
 
 @media (max-width: 767px) {
   /* line 40, ../../Arafath/CL/january 2020/237. Real Estate/HTML/scss/_facilites.scss */
@@ -6520,6 +6522,9 @@ a,a:hover,a:active,a:focus {
 .card1 {
 	background-color: #f0f8f0;
 }
+.card2 {
+	background-color: #dbe9f1;
+}
 
 .v3-biz-info-wrapper .business-info-wrapper .business-info {
   padding: 15px;
@@ -6574,6 +6579,11 @@ a,a:hover,a:active,a:focus {
 .investment2 {
   font-size: 11px;
   color: #000;
+}
+.blockquote-footer {
+  font-size: 11px;
+  color: #000;
+  font-weight: 600;
 }
 .border {
   font-size: 13px;
@@ -6729,5 +6739,35 @@ form .user-details .input-box{
   border-color: #5369f8;
   color: #fff;
 }
+.business-big {
+  font-family:'poppins', roboto;
+  font-size: 18px;
+  color: #7D7D7D;
+  font-weight: 600;
+}
+.countries {
+  font-family: poppins;
+  font-size: 21px;
+  font-weight: 600;
+  color: #000;
+}
+.countries_sm {
+  font-family: poppins;
+  font-size: 13px;
+  font-weight: 500;
+  color: #000;
+}
+.arrow_rt {
+  font-family: poppins;
+  font-size:30px;
+  font-weight: 400;
+  color: #000;
+}
+.bg {
+  background-image: url(img/bg/bg_scene);
+}
+
+/* custom scroll bar */
+
 
 /*# sourceMappingURL=style.css.map */
