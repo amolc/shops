@@ -5,8 +5,26 @@ app.controller('organizationCtrl', function($scope, $http, $window, config) {
 
     $scope.data = {}
 
+    var login = this;
+
+    login.islogin = function() {
+        alert("islogin");
+        var islogin = localStorage.getItem('islogin');
+        console.log(islogin); // gettin
+        alert(islogin);
+        if (islogin == '1') {} else {
+            console.log("we aere in the else loop. debug moere.. ")
+            location.href = 'dashboard.html';
+        }
+
+
+    }
+
+
+
     $scope.init = function(req, res) {
-        console.log("init is workinh");
+        var confirmlogin = login.islogin();
+
         console.log(config.baseurl);
 
     }
@@ -112,24 +130,29 @@ app.controller('organizationCtrl', function($scope, $http, $window, config) {
 
     $scope.login = function() {
         console.log($scope.data);
-        $http.patch(config.baseurl + 'org/login', $scope.data)
-            .success(function(res) {
-                if (res.data.status == 'true') {
-                    $scope.response = res.data;
-                    console.log('message: ', $scope.response);
-                    window.location.reload();
-                } else {
-                    $scope.response = res.data;
-                    console.log('message: ', $scope.response.message);
-                    window.location.reload();
+        $http.post(config.baseurl + 'org/login', $scope.data)
+            .success(function(response, status, headers, config) {
 
+                if (response.status === "passworderror") {
+                    $scope.message = response.msg;
+                    $scope.validatepassword = "1";
+                    console.log($scope.message);
+                } else if (response.status === "emailerror") {
+                    $scope.message = response.msg;
+                    $scope.validateemail = "1";
+                    console.log($scope.message);
+                } else {
+                    console.log(response.data);
+                    localStorage.setItem('islogin', '1'); // setting
+                    localStorage.setItem('name', response.data.name);
+                    localStorage.setItem('email', response.data.email);
+                    localStorage.setItem('org_id', response.data.org_id);
+                    $window.location = "dashboard.html";
                 }
+
 
             }).error(function() {});
 
     };
 
-
-
-    //orderCtrl ends
 });

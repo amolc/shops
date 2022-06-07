@@ -1,6 +1,6 @@
 app.factory('config', function() {
     return {
-        baseurl: "https://api.superadmin.shop/api/",
+        baseurl: "http://localhost:7000/api/",
         orgId: "1"
     };
 })
