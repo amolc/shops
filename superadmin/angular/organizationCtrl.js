@@ -8,10 +8,10 @@ app.controller('organizationCtrl', function($scope, $http, $window, config) {
     var login = this;
 
     login.islogin = function() {
-        alert("islogin");
+
         var islogin = localStorage.getItem('islogin');
         console.log(islogin); // gettin
-        alert(islogin);
+
         if (islogin == '1') {} else {
             console.log("we aere in the else loop. debug moere.. ")
             location.href = 'dashboard.html';
