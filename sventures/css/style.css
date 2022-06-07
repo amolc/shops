@@ -6411,7 +6411,7 @@ a,a:hover,a:active,a:focus {
 .explore-rating-price a {margin:0;}
 .explore-rating {
     display: inline-block;
-    width: 32px;
+    width: 60px;
     height: 20px;
     line-height: 20px;
     color: #fff;
