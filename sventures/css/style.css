@@ -6500,6 +6500,23 @@ a,a:hover,a:active,a:focus {
   color: #0181f5;
   margin-bottom: 0px;
 }
+.business-text-black-xl {
+  font-size: 22px;
+  font-weight: 600;
+  font-family: "Poppins", sans-serif;
+  line-height: 20px;
+  color: #0d101c;
+  margin-bottom: 0px;
+}
+.business-text-black-xk a:hover {
+  font-size: 22px;
+  font-weight: 600;
+  font-family: "Poppins", sans-serif;
+  line-height: 20px;
+  color: #0d101c;
+  margin-bottom: 0px;
+  text-decoration: underline;
+}
 .business-text-blue-small {
   font-size: 13px;
   font-weight: 400;
@@ -6788,9 +6805,7 @@ form .user-details .input-box{
   color: #252d32;
   font-weight:500
 }
-a:hover {
-  color: #ff2424;
-}
+
 .price-value {
   width: 38%;
   display: inline-block;
