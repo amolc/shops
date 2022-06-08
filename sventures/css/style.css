@@ -935,7 +935,7 @@ h3 {
 .header-area .main-header-area .logo {
   background: #ff2424;
   text-align: center;
-  padding: 33px 0;
+  padding: 15px 0;
 }
 
 @media (max-width: 767px) {
@@ -6776,6 +6776,70 @@ form .user-details .input-box{
   
 }
 
+.hotels {
+  padding:50px 0 50px;
+  background: #f8fafb;
+}
+.hotels-content{margin-top: 30px;}
+
+.link {
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  color: #252d32;
+  font-weight:500
+}
+a:hover {
+  color: #ff2424;
+}
+.price-value {
+  width: 38%;
+  display: inline-block;
+}
+
+@media screen and (max-width:62.5em) {
+  .price-value {
+      width: 40%
+  }
+}
+
+.price-value .input-wrap {
+  position: relative;
+}
+
+.price-value input[type=text] {
+  font-size: .85em;
+  margin-bottom: 3px;
+  height: 2.6em;
+  background: 0 0;
+  display: block;
+  width: 100%;
+  padding: .5em 1em .5em .5em;
+  line-height: 1.25;
+  background-clip: padding-box;
+  border-radius: .25rem;
+  transition: border-color .2s;
+  border: 1px solid #ccc
+}
+
+.price-value input[type=text]::-ms-input-placeholder {
+      color: transparent
+}
+
+.price-value input[type=text]::placeholder {
+      color: transparent
+}
+
+.price-value input[type=text]:placeholder-shown ~ label {
+      font-size: .85em;
+      cursor: text;
+      top: 9px;
+      left: 7px
+}
+.bbq {
+  filter:brightness(120%);
+  filter:contrast(120%);
+  filter:drop-shadow(10px 10px 10px #dcdada);
+}
 /* custom scroll bar */
 
 
