@@ -45,6 +45,8 @@ app.use('/sventures', express.static(__dirname + '/sventures'));
 app.use('/exchange-services', express.static(__dirname + '/exchange-services'));
 app.use('/signals', express.static(__dirname + '/signals'));
 app.use('/15', express.static(__dirname + '/15'));
+app.use('/inspinia', express.static(__dirname + '/inspinia'));
+app.use('/autotrader', express.static(__dirname + '/autotrader'));
 
 
 
