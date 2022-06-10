@@ -347,7 +347,7 @@ a:focus {
 }
 
 .section-title {
-  margin-bottom: 70px;
+  margin-bottom: 50px;
 }
 
 .section-title h2 {
@@ -660,11 +660,11 @@ a:focus {
 }
 
 .mb--80 {
-  margin-bottom: -80px;
+  margin-bottom: -60px;
 }
 
 .service {
-  padding-top: 180px;
+  padding-top: 80px;
 }
 
 .service .service-item {
