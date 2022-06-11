@@ -9876,3 +9876,10 @@ height: 100%;
   margin: 2px 0 5px 0; 
   padding: 2px;
 }
+.rectangle {
+  width: 1920px;
+  height: 105px;
+  border: solid 1px #e0e0e0;
+  background-color: #eae9e9;
+  text-align: center;
+}
