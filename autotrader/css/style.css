@@ -8071,8 +8071,9 @@ body.landing-page {
   height: 470px;
   width: 100%;
 }
+
 .landing-page .header-back.one {
-  background: url('../img/landing/header_one.jpg') 50% 0 no-repeat;
+  background: url('../img/landing/header_two.jpg') 50% 0 no-repeat;
 }
 .landing-page .header-back.two {
   background: url('../img/landing/header_two.jpg') 50% 0 no-repeat;
@@ -9880,6 +9881,15 @@ height: 100%;
   width: 1920px;
   height: 105px;
   border: solid 1px #e0e0e0;
-  background-color: #eae9e9;
+  background-color: #e7e5e5;
   text-align: center;
+}
+li.login-page {
+  background: #1ab394;
+  color: #fff;
+  padding: 10px;
+  border-radius: 4px 4px 0 0;
+  font-size: 20px;
+  font-weight: 600;
+  width: 300px;
 }
