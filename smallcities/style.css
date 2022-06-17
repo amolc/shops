@@ -2579,6 +2579,7 @@ img {
   background-image: url(img/apt/apt1.jpg);
   height: 298px;
   width: 545px;
+  border: 0px;
 }
 .apt2 {
   background-image: url(img/apt/apt2.jpg);
