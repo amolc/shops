@@ -23,6 +23,7 @@
     "nodemon": "^2.0.15",
     "sequelize": "^6.19.0",
     "serve-static": "^1.15.0",
+    "side-channel": "^1.0.4",
     "sqlite3": "^5.0.8",
     "uuid": "^8.3.2"
   }
