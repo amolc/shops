@@ -48,7 +48,7 @@ app.use('/15', express.static(__dirname + '/15'));
 app.use('/inspinia', express.static(__dirname + '/inspinia'));
 app.use('/autotrader', express.static(__dirname + '/autotrader'));
 app.use('/smallcities', express.static(__dirname + '/smallcities'));
-app.use('/project', express.static(__dirname + '/project'));
+app.use('/acesofoundation', express.static(__dirname + '/acesofoundation'));
 
 
 
