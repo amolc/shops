@@ -9830,26 +9830,4 @@ textarea.form-control {
   100% {
     stroke-dasharray: 89, 200;
     stroke-dashoffset: -136px; } }
-    {
-      "campaign": {
-        "id": "FUNXXXXXXXX",
-        "code": "MYCODE",
-        "name": "My campaign name"
-      },
-      "customFields": {
-        "source": "Twitter"
-      },
-      "utm": {
-        "source": "Twitter",
-        "campaign": "",
-        "medium": "",
-        "term": "",
-        "content": ""
-      },
-      "livemode": true,
-      "element": {
-        "id": "XXXXXXX1",
-        "type": "Donate Button",
-        "name": "Donate Button - Main Header"
-      }
-    }
+    
