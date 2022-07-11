@@ -316,7 +316,7 @@ h5, .h5 {
   font-size: 1.25rem; }
 
 h6, .h6 {
-  font-size: 1rem; }
+  font-size: 1.2rem; }
 
 .lead {
   font-size: 1.25rem;
@@ -7998,7 +7998,7 @@ a.text-dark:hover, a.text-dark:focus {
 body {
   font-family:  'Cormorant Garamond', Arial, sans-serif;
   background: #fff;
-  font-size: 17px;
+  font-size: 20px;
   line-height: 1.8;
   font-weight: 400;
   color: gray; }
@@ -8035,7 +8035,7 @@ h1, h2, h3, h4, h5,
       color: #fff; }
     .wrap .phone a {
       color: #fff;
-      font-size: 14px;
+      font-size: 16px;
     font-family: "Cormorant Garamond"; }
   .wrap1 {
     font-family: "cormorant Garamound";
@@ -8416,7 +8416,7 @@ h1, h2, h3, h4, h5,
   border-radius: 3px;
   -webkit-box-shadow: none !important;
   box-shadow: none !important;
-  font-size: 15px;
+  font-size: 18px;
   font-weight: 500; }
   .btn:hover, .btn:active, .btn:focus {
     outline: none; }
@@ -8931,8 +8931,8 @@ textarea.form-control {
   height: inherit !important; }
 
 .ftco-footer {
-  font-size: 16px;
-  padding: 6em 0 0 0;
+  font-size: 18px;
+  padding: 3em 0 0 0;
   background: #05a709;
   color: rgba(255, 255, 255, 0.9); }
   .ftco-footer .logo a {
@@ -9792,7 +9792,7 @@ textarea.form-control {
   background-color: #f5f4f0;
 }
 .Norm {
-  font-size: 16px;
+  font-size: 20px;
   color:#000;
 }
 .img {
@@ -9830,3 +9830,26 @@ textarea.form-control {
   100% {
     stroke-dasharray: 89, 200;
     stroke-dashoffset: -136px; } }
+    {
+      "campaign": {
+        "id": "FUNXXXXXXXX",
+        "code": "MYCODE",
+        "name": "My campaign name"
+      },
+      "customFields": {
+        "source": "Twitter"
+      },
+      "utm": {
+        "source": "Twitter",
+        "campaign": "",
+        "medium": "",
+        "term": "",
+        "content": ""
+      },
+      "livemode": true,
+      "element": {
+        "id": "XXXXXXX1",
+        "type": "Donate Button",
+        "name": "Donate Button - Main Header"
+      }
+    }
