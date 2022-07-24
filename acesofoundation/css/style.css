@@ -8238,11 +8238,11 @@ h1, h2, h3, h4, h5,
   position: relative;
   z-index: 0; }
   .hero-wrap.hero-wrap-2 {
-    height: 400px !important;
+    height: 300px !important;
     position: relative; }
     .hero-wrap.hero-wrap-2 .overlay {
       width: 100%;
-      height: 400px;
+      height: 300px;
       position: absolute;
       top: 0;
       left: 0;
@@ -8259,7 +8259,7 @@ h1, h2, h3, h4, h5,
       background: linear-gradient(45deg, #589167 0%, rgba(88, 145, 103, 0) 100%);
       filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#589167', endColorstr='#589167', GradientType=1 ); }
     .hero-wrap.hero-wrap-2 .slider-text {
-      height: 400px !important; }
+      height: 300px !important; }
 
 .slider-text {
   height: 850px;
@@ -8458,14 +8458,14 @@ h1, h2, h3, h4, h5,
   .services-wrap .img, .services-wrap .text {
     width: 50%; }
   .services-wrap .text {
-    padding: 30px;
+    padding: 25px;
     -moz-transition: all 0.3s ease;
     -o-transition: all 0.3s ease;
     -webkit-transition: all 0.3s ease;
     -ms-transition: all 0.3s ease;
     transition: all 0.3s ease; }
     .services-wrap .text h2 {
-      font-size: 28px;
+      font-size: 26px;
       font-weight: 700; }
   .services-wrap:hover .text {
     color: rgba(255, 255, 255, 0.8);
@@ -9798,6 +9798,13 @@ textarea.form-control {
 .img {
   margin-right: auto;
  display: block;
+}
+.error {
+  display: block;
+  font-weight: 700;
+  font-size: 14px;
+  color: red;
+  display: none;
 }
 @-webkit-keyframes loader-rotate {
   100% {

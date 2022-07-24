@@ -28,7 +28,7 @@
 			<div class="row">
 				<div class="col-md-6 d-flex align-items-center">
 					<p class="mb-0 phone pl-md-2">
-						<a href="mailto:sm511@icloud.com" class="mr-2"> Have any question?</a> 
+						<a href="contactus.html" class="mr-2"> Have any questions?</a> 
 						<a href="mailto:info@acesofoundation.com"><span class="fa fa-paper-plane mr-1"></span> info@acesofoundation.org</a>
 					</p>
 				</div>
@@ -89,8 +89,7 @@
 				        			<span class="fa fa-map-marker"></span>
 				        		</div>
 				        		<div class="text">
-					            <p><span>Address:</span></p> 	
-								<p>Chief Operations Officer, 4435 E. Holmes Ave. Mesa, AZ 85206.</p>
+					            <p><span>Address:</span></p> 	<p>Chief Operations Officer, 4435 E. Holmes Ave. Mesa, AZ 85206.</p>
 					          </div>
 				          </div>
 								</div>
@@ -100,7 +99,7 @@
 				        			<span class="fa fa-phone"></span>
 				        		</div>
 				        		<div class="text">
-					            <p><span>Phone:</span></p> <p><a href="tel://1234567920">202-838-6016</a></p>
+					            <p><span>Phone:</span></p> <p><a href="tel://1234567920">609-209-4517</a></p>
 					          </div>
 				          </div>
 								</div>
@@ -110,7 +109,7 @@
 				        			<span class="fa fa-paper-plane"></span>
 				        		</div>
 				        		<div class="text">
-					            <p><span>Email:</span></p> <p><a href="mailto:sm511@icloud.com">info@acesofoundation.org</a></p>
+					            <p><span>Email:</span></p> <p><a href="mailto:info@acesofoundation.org">info@acesofoundation.org</a></p>
 					          </div>
 				          </div>
 								</div>
@@ -129,36 +128,41 @@
 								<div class="col-md-7">
 									<div class="contact-wrap w-100 p-md-5 p-4">
 										<h3 class="mb-4">Contact Us</h3>
-										<form method="POST" id="contactForm" name="contactForm" class="contactForm" >
+										<div id="error_message"></div>
+										<form method="">
 											<div class="row">
 												<div class="col-md-6">
 													<div class="form-group">
-														<label class="label" for="name">Full Name</label>
-														<input type="text" class="form-control" name="name" id="name" placeholder="Name">
+														<label for="contact-name">Full Name</label>
+														<input type="text" class="form-control" id="contact-name" name="name" placeholder="Enter Full Name.." onkeyup='validateName()'>
+														<span class='error-message' id='name-error'></span>
 													</div>
 												</div>
 												<div class="col-md-6"> 
 													<div class="form-group">
-														<label class="label" for="email">Email Address</label>
-														<input type="email" class="form-control" name="email" id="email" placeholder="Email">
+														<label for="contact-email">Email address</label>
+														<input type="email" class="form-control" id="contact-email" name="email" placeholder="Enter Email" onkeyup='validateEmail()'>
+														<span class='error-message' id='email-error'></span>
 													</div>
 												</div>
 												<div class="col-md-12">
 													<div class="form-group">
-														<label class="label" for="subject">Subject</label>
-														<input type="text" class="form-control" name="subject" id="subject" placeholder="Subject">
+														<label for="contact-subject">Subject</label>
+														<input type="subject" class="form-control" id="contact-subject" name="subject" placeholder="Enter Subject" onkeyup='validateEmail()'>
+														<span class='error-subject' id='subject-error'></span>
 													</div>
 												</div>
 												<div class="col-md-12">
 													<div class="form-group">
-														<label class="label" for="#">Message</label>
-														<textarea name="message" class="form-control" id="message" cols="30" rows="4" placeholder="Message"></textarea>
+														<label for='contactMessage'>Message</label>
+														<textarea class="form-control" rows="5" id='contact-message'  name='message'  placeholder="Enter a brief message" onkeyup='validateMessage()'></textarea>
+														<span class='error-message' id='message-error'></span>
 													</div>
 												</div>
 												<div class="col-md-12">
 													<div class="form-group">
-														<input type="submit" value="Send Message" class="btn btn-primary">
-														<div class="submitting"></div>
+														<button onclick='return validateForm()' class="btn btn-default">Send Message</button>
+														<span class='error-message' id='submit-error' class="btn btn-primary"></span>
 													</div>
 												</div>
 											</div>
