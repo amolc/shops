@@ -2,7 +2,7 @@ name: deploy api on prod
 on:
   push:
     branches:
-      - master
+      - main
 
 jobs:
   deploy:
