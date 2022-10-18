@@ -21,4 +21,6 @@ jobs:
             cd /home/${{ secrets.SSH_USER }}/repos/shops
             git fetch origin main
             git reset --hard FETCH_HEAD
+            git clean -d -f --exclude secrets
             git pull
+            ./scripts/deployfrontend.sh shops
