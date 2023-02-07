@@ -5,69 +5,158 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Registration Form</title>
 	<link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 <body>
 
-<div class="wrapper">
-    <div class="title">
-      Registration Form
-    </div>
-    <div class="form">
-       <div class="inputfield">
-          <label>First Name</label>
-          <input type="text" class="input">
-       </div>  
-        <div class="inputfield">
-          <label>Last Name</label>
-          <input type="text" class="input">
-       </div>  
-       <div class="inputfield">
-          <label>Password</label>
-          <input type="password" class="input">
-       </div>  
-      <div class="inputfield">
-          <label>Confirm Password</label>
-          <input type="password" class="input">
-       </div> 
-        <div class="inputfield">
-          <label>Gender</label>
-          <div class="custom_select">
-            <select>
-              <option value="">Select</option>
-              <option value="male">Male</option>
-              <option value="female">Female</option>
-            </select>
-          </div>
-       </div> 
-        <div class="inputfield">
-          <label>Email Address</label>
-          <input type="text" class="input">
-       </div> 
-      <div class="inputfield">
-          <label>Phone Number</label>
-          <input type="text" class="input">
-       </div> 
-      <div class="inputfield">
-          <label>Address</label>
-          <textarea class="textarea"></textarea>
-       </div> 
-      <div class="inputfield">
-          <label>Postal Code</label>
-          <input type="text" class="input">
-       </div> 
-      <div class="inputfield terms">
-          <label class="check">
-            <input type="checkbox">
-            <span class="checkmark"></span>
-          </label>
-          <p>Agreed to terms and conditions</p>
-       </div> 
-      <div class="inputfield">
-        <input type="submit" value="Register" class="btn">
+  <section class="wrapper">
+    <div class="row">
+      <div class="col-lg-12">
+        <img src="images/hdfc_logo.jpg" class="col-sm-12 img-responsive"></div>
       </div>
-      <p class="text-muted text-center" style="text-align:center;"><small1>Already have an account?</small> <a href="login.html" class="link-danger">Login</a></p>
+  </section>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12" style="text-align:center;">
+        <span class="title_text" class="col-sm-12">Welcome to the HDFC Bank <p class="title_text">Netbanking</p></span>
+      </div>
     </div>
-</div>	
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <h2>Login to NetBanking</h2>
+    <form action="/action_page.php">
+      <div class="form-group">
+        <label for="email">Customer ID/User ID:</label>
+        <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+      </div>
+      <div class="form-group">
+        <label for="pwd">Password:</label>
+        <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pwd">
+        <label for="forgotPassword">Forgot Password</label>
+      </div>
+      <div class="form-group">
+        <label for="telephone">Mobile Number:</label>
+        <input type="tel" class="form-control" id="tel" placeholder="" name="tel">
+      </div>
+      <button type="submit" class="btn btn-info">Submit</button>
+    </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3"></div>
+      <div class="col-md-6" style="background-color:#e2eefa">
+        <div class="row">
+          <div class="col-sm-12">
+            <p class="blue_text">Dear Customer,<p>
+        <p class="blue_text mt-2">Welcome to the new login page of HDFC Bank NetBanking.</p>
+        <p class="blue_text">Its lighter look and feel is designed to give you the best possible user experience.</p>
+        <p class="blue_text">Please continue to login using your customer ID and password.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3"></div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12"style=height:10px;></div>
+    </div>
+    <div class="row">
+      <div class="col-md-3"></div>
+      <div class="col-md-6">
+        <h4>Dont't have a HDFC Bank Savings Account?</h4>
+      </div>
+      <div class="col-md-3">
+    </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3"></div>
+      <div class="col-md-6">
+        <h5><a href="#">Credit Card only? Login here</a></h5>
+        <p><h5><a href="#">Prepaid Card only? Login here</h5></a></p>
+        <p><h5><a href="#">Retail Loan only? Login here</h5></a></p>
+      </div>
+      <div class="col-md-3"></div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12"style=height:20px;></div>
+    </div>
+    <div class="row"  style="height:20px;">
+      <div class="col-md-3"></div>
+      <div class="col-md-6">
+        <img src="images/png-clipart-norton.png">
+      </div>
+      <div class="col-md-3"></div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12"style=height:20px;></div>
+    </div>
+    <div class="row mt-3">
+      <div class="col-md-3"></div>
+      <div class="col-md-6">
+        <h5>Your security is of utmost importance.</h5>
+        <p><a href="#">Know more...</a></p>
+      </div>
+      <div class="col-md-3"></div>    
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3"></div>
+      <div class="col-md-6">
+        <h5>First Time User?</h5>
+        <p><a href="#">Register Now</a> for a host of convenient features</p>
+      </div>
+      <div class="col-md-3"></div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3"></div>
+      <div class="col-md-6">
+        <span class="middle_text">We have added a host of new features!</span>
+      </div>
+      <div class="col-md-3"></div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3"></div>
+      <div class="col-md-6">
+        <span>You can now do so much more:</span>
+        <div class="row mt-3">
+          <div class="col-md-12">
+            <ul>
+              <li>Anywhere access through Desktop or Mobile</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3"></div>
+    </div>
+  </div>
 	
 </body>
 </html>

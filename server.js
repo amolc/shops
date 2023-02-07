@@ -51,6 +51,8 @@ app.use('/smallcities', express.static(__dirname + '/smallcities'));
 app.use('/acesofoundation', express.static(__dirname + '/acesofoundation'));
 app.use('/testing', express.static(__dirname + '/testing'));
 app.use('/angularjs', express.static(__dirname + '/angularjs'));
+app.use('/kapil', express.static(__dirname + '/kapil'));
+app.use('/expressg', express.static(__dirname + '/expressg'));
 
 
 
