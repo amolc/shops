@@ -2930,9 +2930,13 @@ h3 {
   background-image: url(../img/banner/bradcam_1a.png);
 }
 
+.bradcam_bg_1a {
+  background-image: url(../img/banner/bradcam_2a.png);
+}
+
 /* line 4, ../../Arafath/CL/CL October/213. Business/HTML/scss/_bradcam.scss */
 .breadcam_bg_2 {
-  background-image: url(../img/banner/bradcam_2.png);
+  background-image: url(../img/banner/bradcam_2a.png);
 }
 
 /* line 7, ../../Arafath/CL/CL October/213. Business/HTML/scss/_bradcam.scss */
