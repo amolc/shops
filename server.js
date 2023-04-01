@@ -53,6 +53,7 @@ app.use('/testing', express.static(__dirname + '/testing'));
 app.use('/angularjs', express.static(__dirname + '/angularjs'));
 app.use('/kapil', express.static(__dirname + '/kapil'));
 app.use('/recycle', express.static(__dirname + '/recycle'));
+app.use('/OnePage', express.static(__dirname + '/OnePage'));
 
 
 
